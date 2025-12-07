@@ -1,59 +1,69 @@
-// Mobile Menu Toggle
-const menuBtn = document.getElementById("menu-btn");
-const mobileMenu = document.getElementById("mobile-menu");
-
-if (menuBtn && mobileMenu) {
-  menuBtn.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
+$(document).ready(() => {
+  // --- 1. Mobile Menu Toggle ---
+  $("#menu-btn").on("click", () => {
+    $("#mobile-menu").slideToggle(300); // jQuery Slide Animation
   });
-}
 
-// Pricing Toggle Logic
-const pricingData = {
-  monthly: [29, 49, 79, 129],
-  sixMonth: [159, 269, 429, 699], // Approx 10% discount
-  yearly: [299, 499, 799, 1299], // Approx 15-20% discount
-};
-
-const priceElements = document.querySelectorAll(".price-amount");
-const billingTextElements = document.querySelectorAll(".billing-text");
-const toggleButtons = document.querySelectorAll(".pricing-toggle-btn");
-
-toggleButtons.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    // Remove active class from all
-    toggleButtons.forEach((b) => {
-      b.classList.remove("bg-primary", "text-primary-foreground");
-      b.classList.add("bg-secondary", "text-secondary-foreground");
-    });
-
-    // Add active class to clicked
-    btn.classList.remove("bg-secondary", "text-secondary-foreground");
-    btn.classList.add("bg-primary", "text-primary-foreground");
-
-    const period = btn.dataset.period; // 'monthly', 'sixMonth', 'yearly'
-    updatePrices(period);
-  });
-});
-
-function updatePrices(period) {
-  const prices = pricingData[period];
-  const billingLabels = {
-    monthly: "/month",
-    sixMonth: "/6 months",
-    yearly: "/year",
+  // --- 2. Pricing Toggle Logic ---
+  const pricingData = {
+    monthly: [29, 49, 79, 129],
+    sixMonth: [159, 269, 429, 699],
+    yearly: [299, 499, 799, 1299],
   };
 
-  priceElements.forEach((el, index) => {
-    // Simple animation effect
-    el.style.opacity = 0;
-    setTimeout(() => {
-      el.textContent = `$${prices[index]}`;
-      el.style.opacity = 1;
-    }, 200);
+  $(".pricing-toggle-btn").on("click", function () {
+    // Toggle Active Classes
+    $(".pricing-toggle-btn")
+      .removeClass("bg-primary text-primary-foreground")
+      .addClass("bg-secondary text-secondary-foreground");
+    $(this).removeClass("bg-secondary text-secondary-foreground").addClass("bg-primary text-primary-foreground");
+
+    const period = $(this).data("period");
+    const prices = pricingData[period];
+    const label = period === "monthly" ? "/month" : period === "sixMonth" ? "/6 months" : "/year";
+
+    // Animate Price Change
+    $(".price-amount").fadeOut(200, () => {
+      // This runs after fadeOut finishes
+      // 'this' refers to the specific .price-amount element being animated
+      // Since there are multiple prices, we need to map the index correctly
+      // Note: In jQuery 'each' loop inside here might be safer
+    });
+
+    // Better approach for multiple elements sync:
+    $(".price-amount").each(function (index) {
+      $(this).fadeOut(200, function () {
+        $(this)
+          .text("$" + prices[index])
+          .fadeIn(200);
+      });
+    });
+
+    $(".billing-text").fadeOut(200, function () {
+      $(this).text(label).fadeIn(200);
+    });
   });
 
-  billingTextElements.forEach((el) => {
-    el.textContent = billingLabels[period];
-  });
-}
+  // --- 3. Scroll Fade-In Animation ---
+  // Select all elements with the class 'fade-in-section'
+  const $sections = $(".fade-in-section");
+
+  function checkScroll() {
+    const scrollTop = $(window).scrollTop();
+    const windowHeight = $(window).height();
+
+    $sections.each(function () {
+      const $this = $(this);
+      const elementTop = $this.offset().top;
+
+      // If element is within viewport
+      if (elementTop < scrollTop + windowHeight - 50) {
+        $this.addClass("is-visible");
+      }
+    });
+  }
+
+  // Run on scroll and initial load
+  $(window).on("scroll", checkScroll);
+  checkScroll(); // Trigger once on load
+});
