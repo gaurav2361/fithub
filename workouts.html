@@ -11,26 +11,44 @@
 </head>
 <body>
 
-    <nav class="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur p-4">
-        <div class="container mx-auto flex justify-between max-w-7xl">
-            <a href="index.html" class="text-2xl font-bold">FitHub.</a>
+    <nav class="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur p-4">
+        <div class="container mx-auto flex items-center justify-between max-w-7xl">
+            <a href="index.html" class="text-2xl font-bold tracking-tighter">FitHub<span class="text-destructive">.</span></a>
             <div class="hidden md:flex gap-8">
                 <a href="index.html" class="text-muted-foreground hover:text-foreground">Home</a>
                 <a href="packages.html" class="text-muted-foreground hover:text-foreground">Packages</a>
-                <a href="workouts.html" class="text-foreground font-medium">Workouts</a>
+                <a href="workouts.html" class="text-destructive font-medium">Workouts</a>
                 <a href="contact.html" class="text-muted-foreground hover:text-foreground">Contact</a>
+            </div>
+            <button id="menu-btn" class="md:hidden p-2 text-foreground cursor-pointer">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-border bg-background p-4">
+            <div class="flex flex-col space-y-4">
+                <a href="index.html" class="text-muted-foreground">Home</a>
+                <a href="packages.html" class="text-muted-foreground">Packages</a>
+                <a href="workouts.html" class="font-medium text-destructive">Workouts</a>
+                <a href="contact.html" class="text-muted-foreground">Contact</a>
             </div>
         </div>
     </nav>
 
-    <section class="section-padding">
+    <section class="section-padding pt-32">
         <div class="container mx-auto px-4 max-w-7xl">
-            <h1 class="section-title fade-in-section">Our Programs</h1>
+
+            <div class="text-center mb-16 max-w-2xl mx-auto fade-in-section">
+                <h1 class="section-title mb-4">World-Class Training Programs</h1>
+                <p class="text-xl text-muted-foreground mb-4">
+                    Whether you want to build muscle, lose weight, or just move better, we have a class for you.
+                </p>
+                <div class="h-1 w-20 bg-destructive mx-auto rounded-full"></div>
+            </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
                 <div class="fitness-card fade-in-section">
-                    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1470" class="w-full h-48 object-cover">
+                    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1470" class="w-full h-56 object-cover hover:scale-105 transition-transform duration-500">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Strength Training</h3>
                         <p class="text-muted-foreground text-sm">Compound lifts to build raw power and muscle density.</p>
@@ -38,7 +56,7 @@
                 </div>
 
                 <div class="fitness-card fade-in-section">
-                    <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=1470" class="w-full h-48 object-cover">
+                    <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=1470" class="w-full h-56 object-cover hover:scale-105 transition-transform duration-500">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">HIIT Cardio</h3>
                         <p class="text-muted-foreground text-sm">High intensity intervals to burn fat fast.</p>
@@ -46,7 +64,7 @@
                 </div>
 
                 <div class="fitness-card fade-in-section">
-                    <img src="https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?q=80&w=1469" class="w-full h-48 object-cover">
+                    <img src="https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?q=80&w=1469" class="w-full h-56 object-cover hover:scale-105 transition-transform duration-500">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Power Yoga</h3>
                         <p class="text-muted-foreground text-sm">Flexibility meets core strength in this flow.</p>
@@ -54,7 +72,7 @@
                 </div>
 
                 <div class="fitness-card fade-in-section">
-                    <img src="https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?q=80&w=1470" class="w-full h-48 object-cover">
+                    <img src="https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?q=80&w=1470" class="w-full h-56 object-cover hover:scale-105 transition-transform duration-500">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">CrossFit</h3>
                         <p class="text-muted-foreground text-sm">Functional fitness performed at high intensity.</p>
@@ -62,7 +80,7 @@
                 </div>
 
                 <div class="fitness-card fade-in-section">
-                    <img src="https://images.unsplash.com/photo-1549719386-74dfc441d625?q=80&w=1470" class="w-full h-48 object-cover">
+                    <img src="https://images.unsplash.com/photo-1595078475328-1ab05d0a6a0e?q=80&w=1470" class="w-full h-56 object-cover hover:scale-105 transition-transform duration-500">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Boxing</h3>
                         <p class="text-muted-foreground text-sm">Technical striking and conditioning.</p>
@@ -70,7 +88,7 @@
                 </div>
 
                 <div class="fitness-card fade-in-section">
-                    <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=1470" class="w-full h-48 object-cover">
+                    <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=1470" class="w-full h-56 object-cover hover:scale-105 transition-transform duration-500">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Pilates</h3>
                         <p class="text-muted-foreground text-sm">Core stabilization and posture correction.</p>
@@ -78,7 +96,7 @@
                 </div>
 
                 <div class="fitness-card fade-in-section">
-                    <img src="https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?q=80&w=1469" class="w-full h-48 object-cover">
+                    <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?q=80&w=1374" class="w-full h-56 object-cover hover:scale-105 transition-transform duration-500">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Calisthenics</h3>
                         <p class="text-muted-foreground text-sm">Bodyweight mastery on bars and rings.</p>
@@ -86,7 +104,7 @@
                 </div>
 
                 <div class="fitness-card fade-in-section">
-                    <img src="https://images.unsplash.com/photo-1594737625785-a6cbdabd333c?q=80&w=1470" class="w-full h-48 object-cover">
+                    <img src="https://images.unsplash.com/photo-1594737625785-a6cbdabd333c?q=80&w=1470" class="w-full h-56 object-cover hover:scale-105 transition-transform duration-500">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Spinning</h3>
                         <p class="text-muted-foreground text-sm">Endurance cycling in a group environment.</p>
@@ -94,7 +112,7 @@
                 </div>
 
                 <div class="fitness-card fade-in-section">
-                    <img src="https://images.unsplash.com/photo-1517130038641-a774d04afb3c?q=80&w=1470" class="w-full h-48 object-cover">
+                    <img src="https://images.unsplash.com/photo-1517130038641-a774d04afb3c?q=80&w=1470" class="w-full h-56 object-cover hover:scale-105 transition-transform duration-500">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Zumba</h3>
                         <p class="text-muted-foreground text-sm">Dance fitness to Latin rhythms.</p>
