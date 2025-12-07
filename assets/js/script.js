@@ -1,10 +1,23 @@
 $(document).ready(() => {
-  // --- 1. Mobile Menu Toggle ---
+  // 1. Mobile Menu
   $("#menu-btn").on("click", () => {
-    $("#mobile-menu").slideToggle(300); // jQuery Slide Animation
+    $("#mobile-menu").slideToggle(300);
   });
 
-  // --- 2. Pricing Toggle Logic ---
+  // 2. FAQ Accordion Logic (NEW)
+  $(".faq-question").on("click", function () {
+    // Toggle the answer for the clicked question
+    $(this).next(".faq-answer").slideToggle(300);
+
+    // Rotate the arrow icon (optional visual flair)
+    $(this).find("span").toggleClass("rotate-180");
+
+    // Optional: Close other answers when one is opened
+    $(".faq-answer").not($(this).next()).slideUp(300);
+    $(".faq-question").not($(this)).find("span").removeClass("rotate-180");
+  });
+
+  // 3. Pricing Logic (Existing)
   const pricingData = {
     monthly: [29, 49, 79, 129],
     sixMonth: [159, 269, 429, 699],
@@ -12,7 +25,6 @@ $(document).ready(() => {
   };
 
   $(".pricing-toggle-btn").on("click", function () {
-    // Toggle Active Classes
     $(".pricing-toggle-btn")
       .removeClass("bg-primary text-primary-foreground")
       .addClass("bg-secondary text-secondary-foreground");
@@ -22,15 +34,6 @@ $(document).ready(() => {
     const prices = pricingData[period];
     const label = period === "monthly" ? "/month" : period === "sixMonth" ? "/6 months" : "/year";
 
-    // Animate Price Change
-    $(".price-amount").fadeOut(200, () => {
-      // This runs after fadeOut finishes
-      // 'this' refers to the specific .price-amount element being animated
-      // Since there are multiple prices, we need to map the index correctly
-      // Note: In jQuery 'each' loop inside here might be safer
-    });
-
-    // Better approach for multiple elements sync:
     $(".price-amount").each(function (index) {
       $(this).fadeOut(200, function () {
         $(this)
@@ -38,32 +41,23 @@ $(document).ready(() => {
           .fadeIn(200);
       });
     });
-
     $(".billing-text").fadeOut(200, function () {
       $(this).text(label).fadeIn(200);
     });
   });
 
-  // --- 3. Scroll Fade-In Animation ---
-  // Select all elements with the class 'fade-in-section'
+  // 4. Scroll Animation
   const $sections = $(".fade-in-section");
-
   function checkScroll() {
     const scrollTop = $(window).scrollTop();
     const windowHeight = $(window).height();
-
     $sections.each(function () {
       const $this = $(this);
-      const elementTop = $this.offset().top;
-
-      // If element is within viewport
-      if (elementTop < scrollTop + windowHeight - 50) {
+      if ($this.offset().top < scrollTop + windowHeight - 50) {
         $this.addClass("is-visible");
       }
     });
   }
-
-  // Run on scroll and initial load
   $(window).on("scroll", checkScroll);
-  checkScroll(); // Trigger once on load
+  checkScroll();
 });

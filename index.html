@@ -16,7 +16,7 @@
             <a href="index.html" class="text-2xl font-bold tracking-tighter">FitHub<span class="text-destructive">.</span></a>
 
             <div class="hidden md:flex gap-8">
-                <a href="index.html" class="text-sm font-medium hover:text-destructive transition-colors">Home</a>
+                <a href="index.html" class="text-sm font-medium text-destructive transition-colors">Home</a>
                 <a href="packages.html" class="text-sm font-medium text-muted-foreground hover:text-foreground">Packages</a>
                 <a href="workouts.html" class="text-sm font-medium text-muted-foreground hover:text-foreground">Workouts</a>
                 <a href="contact.html" class="text-sm font-medium text-muted-foreground hover:text-foreground">Contact</a>
@@ -28,7 +28,7 @@
         </div>
         <div id="mobile-menu" class="hidden md:hidden border-t border-border bg-background p-4">
             <div class="flex flex-col space-y-4">
-                <a href="index.html" class="font-medium">Home</a>
+                <a href="index.html" class="font-medium text-destructive">Home</a>
                 <a href="packages.html" class="text-muted-foreground">Packages</a>
                 <a href="workouts.html" class="text-muted-foreground">Workouts</a>
                 <a href="contact.html" class="text-muted-foreground">Contact</a>
@@ -36,109 +36,232 @@
         </div>
     </nav>
 
-    <header class="relative min-h-[85vh] flex items-center justify-center overflow-hidden fade-in-section">
+    <header class="relative min-h-[90vh] flex items-center justify-center overflow-hidden fade-in-section">
         <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1470&auto=format&fit=crop"
-                 alt="Gym" class="w-full h-full object-cover opacity-20">
+            <img src="https://unsplash.com/photos/a-gym-filled-with-lots-of-machines-and-weights-1RNQ11ZODJM"
+                 alt="Gym Dark" class="w-full h-full object-cover opacity-25">
             <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
         </div>
         <div class="container relative z-10 px-4 text-center max-w-4xl">
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
-                UNLEASH YOUR <span class="text-destructive">POTENTIAL</span>
+            <div class="inline-block border border-border bg-secondary/50 px-4 py-1 rounded-full mb-6 text-sm backdrop-blur">
+                🔥 Start your transformation today
+            </div>
+            <h1 class="text-5xl md:text-8xl font-extrabold mb-6 tracking-tighter text-white">
+                BUILD YOUR <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-destructive to-orange-500">LEGACY</span>
             </h1>
-            <p class="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Join the elite fitness community. Expert coaching, premium facilities, and real results.
+            <p class="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
+                More than just a gym. We are a high-performance training ground designed to push your limits.
             </p>
-            <div class="flex justify-center gap-4">
-                <a href="packages.html" class="btn btn-primary">Start Now</a>
-                <a href="workouts.html" class="btn btn-outline">View Programs</a>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="packages.html" class="btn btn-destructive">View Membership</a>
+                <a href="workouts.html" class="btn btn-outline">Explore Programs</a>
             </div>
         </div>
     </header>
 
-    <section class="py-12 border-y border-border bg-card/30 fade-in-section">
+    <section class="py-16 border-y border-border bg-card/20 fade-in-section">
         <div class="container mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div><h3 class="text-4xl font-bold">15+</h3><p class="text-muted-foreground">Trainers</p></div>
-            <div><h3 class="text-4xl font-bold">100+</h3><p class="text-muted-foreground">Machines</p></div>
-            <div><h3 class="text-4xl font-bold">24/7</h3><p class="text-muted-foreground">Access</p></div>
-            <div><h3 class="text-4xl font-bold">2k+</h3><p class="text-muted-foreground">Members</p></div>
+            <div><h3 class="text-5xl font-bold text-white">15+</h3><p class="text-muted-foreground mt-2">Elite Trainers</p></div>
+            <div><h3 class="text-5xl font-bold text-white">100+</h3><p class="text-muted-foreground mt-2">Machines</p></div>
+            <div><h3 class="text-5xl font-bold text-white">24/7</h3><p class="text-muted-foreground mt-2">Access</p></div>
+            <div><h3 class="text-5xl font-bold text-white">5★</h3><p class="text-muted-foreground mt-2">Rated Gym</p></div>
         </div>
     </section>
 
     <section class="section-padding fade-in-section">
         <div class="container mx-auto px-4 max-w-6xl">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="rounded-xl overflow-hidden shadow-2xl border border-border">
-                    <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=80&w=1375" alt="Trainer" class="w-full h-auto">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="relative rounded-2xl overflow-hidden border border-border shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1470" alt="Gym Interior" class="w-full h-auto transform hover:scale-105 transition duration-700">
                 </div>
                 <div>
-                    <h2 class="text-3xl font-bold mb-6">Why We Are Different</h2>
-                    <ul class="space-y-4 text-lg text-muted-foreground">
-                        <li class="flex items-center"><span class="text-destructive mr-3">✓</span> Bio-Mechanics Lab</li>
-                        <li class="flex items-center"><span class="text-destructive mr-3">✓</span> Free Nutrition Guide</li>
-                        <li class="flex items-center"><span class="text-destructive mr-3">✓</span> Community Events</li>
-                        <li class="flex items-center"><span class="text-destructive mr-3">✓</span> Recovery Sauna</li>
+                    <h2 class="text-4xl font-bold mb-6">Why We Are Different</h2>
+                    <p class="text-lg text-muted-foreground mb-8">
+                        Most gyms give you machines. We give you a roadmap. Our facility blends old-school iron with modern sports science.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center text-lg"><span class="text-destructive mr-3 text-xl">✓</span> Advanced Bio-Mechanics Lab</li>
+                        <li class="flex items-center text-lg"><span class="text-destructive mr-3 text-xl">✓</span> Free Custom Nutrition Guide</li>
+                        <li class="flex items-center text-lg"><span class="text-destructive mr-3 text-xl">✓</span> Recovery Sauna & Ice Bath</li>
+                        <li class="flex items-center text-lg"><span class="text-destructive mr-3 text-xl">✓</span> Community Competitions</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section-padding bg-card/20 fade-in-section">
+    <section class="section-padding bg-card/10 fade-in-section">
         <div class="container mx-auto px-4">
-            <h2 class="section-title">Meet The Pros</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="fitness-card">
-                    <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=1374" class="w-full h-64 object-cover">
-                    <div class="p-6 text-center">
-                        <h3 class="text-xl font-bold">Alex Drago</h3>
-                        <p class="text-destructive text-sm uppercase font-semibold">Strength Coach</p>
-                    </div>
-                </div>
-                <div class="fitness-card">
-                    <img src="https://images.unsplash.com/photo-1611672585731-fa10603fb9e0?q=80&w=1374" class="w-full h-64 object-cover">
-                    <div class="p-6 text-center">
-                        <h3 class="text-xl font-bold">Sarah Vance</h3>
-                        <p class="text-destructive text-sm uppercase font-semibold">Yoga & Mobility</p>
-                    </div>
-                </div>
-                <div class="fitness-card">
-                    <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?q=80&w=1374" class="w-full h-64 object-cover">
-                    <div class="p-6 text-center">
-                        <h3 class="text-xl font-bold">Mike Tyson</h3>
-                        <p class="text-destructive text-sm uppercase font-semibold">Boxing Lead</p>
-                    </div>
-                </div>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-2">Our Facility</h2>
+                <p class="text-muted-foreground">Train in a premium environment.</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?q=80&w=1469" alt="Weights"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=80&w=1375" alt="Cardio"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?q=80&w=1470" alt="Yoga"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?q=80&w=1469" alt="Ropes"></div>
             </div>
         </div>
     </section>
 
     <section class="section-padding fade-in-section">
-        <div class="container mx-auto px-4 max-w-4xl text-center">
-            <h2 class="section-title">Success Stories</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="p-8 border border-border rounded-xl bg-card">
-                    <p class="italic text-muted-foreground mb-4">"FitHub changed my life. I lost 20kg in 6 months thanks to their supportive trainers."</p>
-                    <h4 class="font-bold">- Jane Doe</h4>
+        <div class="container mx-auto px-4 max-w-7xl mb-2">
+            <h2 class="text-4xl font-bold text-center mb-10">Success Stories</h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-12 h-12 rounded-full border-2 border-destructive">
+                        <div>
+                            <h4 class="font-bold">Sarah Jenkins</h4>
+                            <p class="text-xs text-destructive">Lost 15kg</p>
+                        </div>
+                    </div>
+                    <p class="text-muted-foreground">"FitHub changed my entire mindset. I started just wanting to lose weight, but now I'm training for a marathon!"</p>
                 </div>
-                <div class="p-8 border border-border rounded-xl bg-card">
-                    <p class="italic text-muted-foreground mb-4">"The equipment here is top notch. I've never seen a gym this clean and organized."</p>
-                    <h4 class="font-bold">- John Smith</h4>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-12 h-12 rounded-full border-2 border-destructive">
+                        <div>
+                            <h4 class="font-bold">Mike Ross</h4>
+                            <p class="text-xs text-destructive">Muscle Gain</p>
+                        </div>
+                    </div>
+                    <p class="text-muted-foreground">"The equipment here is world-class. I've put on 10kg of muscle in 6 months thanks to the trainers."</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" class="w-12 h-12 rounded-full border-2 border-destructive">
+                        <div>
+                            <h4 class="font-bold">Emily Blunt</h4>
+                            <p class="text-xs text-destructive">Rehab & Mobility</p>
+                        </div>
+                    </div>
+                    <p class="text-muted-foreground">"I came here after a knee injury. The Yoga and Pilates classes helped me recover fully. Highly recommend."</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/86.jpg" class="w-12 h-12 rounded-full border-2 border-destructive">
+                        <div>
+                            <h4 class="font-bold">David Chen</h4>
+                            <p class="text-xs text-destructive">Powerlifting</p>
+                        </div>
+                    </div>
+                    <p class="text-muted-foreground">"Best deadlift platforms in the city. If you are serious about lifting heavy, this is the only place to be."</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/12.jpg" class="w-12 h-12 rounded-full border-2 border-destructive">
+                        <div>
+                            <h4 class="font-bold">Lisa Ray</h4>
+                            <p class="text-xs text-destructive">General Fitness</p>
+                        </div>
+                    </div>
+                    <p class="text-muted-foreground">"The community is so supportive. No one judges you here, everyone just wants to see you succeed."</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/45.jpg" class="w-12 h-12 rounded-full border-2 border-destructive">
+                        <div>
+                            <h4 class="font-bold">James Bond</h4>
+                            <p class="text-xs text-destructive">Functional Training</p>
+                        </div>
+                    </div>
+                    <p class="text-muted-foreground">"The HIIT classes are intense but amazing. I've never felt fitter in my life. Great atmosphere!"</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-card/30 fade-in-section">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+
+            <div class="space-y-2">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What are your opening hours?
+                        <span class="transition-transform duration-300">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        We are open 24/7 for members with a key fob. Staffed hours are from 6:00 AM to 10:00 PM daily.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Do you offer a free trial?
+                        <span class="transition-transform duration-300">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes! We offer a 1-day free pass for locals. You can book it using the form below.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is personal training included?
+                        <span class="transition-transform duration-300">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        One introductory session is included in all plans. The Pro and Elite plans include monthly sessions.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can I freeze my membership?
+                        <span class="transition-transform duration-300">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, you can freeze your membership for up to 3 months per year for medical or travel reasons.
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-20 bg-primary text-primary-foreground text-center fade-in-section">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-4 text-black">Ready to Start?</h2>
-            <p class="mb-8 text-black/80">Your first session is on us.</p>
-            <a href="contact.html" class="btn bg-black text-white hover:bg-black/80">Book Free Trial</a>
+    <section class="py-20 border-t border-border fade-in-section">
+        <div class="container mx-auto px-4 text-center max-w-2xl">
+            <h2 class="text-2xl font-bold mb-4">Join Our Newsletter</h2>
+            <p class="text-muted-foreground mb-8">Get weekly fitness tips, nutrition guides, and exclusive offers.</p>
+            <form class="flex gap-2">
+                <input type="email" placeholder="Enter your email" class="form-input flex-1">
+                <button type="button" class="btn btn-primary">Subscribe</button>
+            </form>
         </div>
     </section>
 
-    <footer class="border-t border-border bg-card py-8 mt-12 text-center text-muted-foreground">
-        <p>&copy; 2025 FitHub. Web Dev Sem 5 Project.</p>
+    <section class="py-24 bg-destructive text-white text-center fade-in-section">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-6">Ready to Transform?</h2>
+            <p class="text-xl mb-8 opacity-90">Your first session is completely free. No commitment required.</p>
+            <a href="contact.html" class="inline-block bg-white text-destructive font-bold py-4 px-10 rounded-lg text-lg hover:bg-gray-100 transition shadow-lg">
+                Book Free Trial
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-card py-12 mt-0">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex justify-center gap-6 mb-8 text-muted-foreground">
+                <a href="#" class="hover:text-white">Instagram</a>
+                <a href="#" class="hover:text-white">Twitter</a>
+                <a href="#" class="hover:text-white">Facebook</a>
+            </div>
+            <p class="text-muted-foreground">&copy; 2025 FitHub. Web Development Semester 5 Project.</p>
+        </div>
     </footer>
 
     <script src="./assets/js/script.js"></script>
