@@ -4,36 +4,72 @@
   --font-sans: "Inter", sans-serif;
 }
 
-/* --- 1. CSS VARIABLES --- */
+/* ========================================
+   1. CSS VARIABLES (Design Tokens)
+   ======================================== */
+/*
+  These variables define the color scheme for the entire website.
+  Using CSS variables makes it easy to maintain consistency and
+  change themes quickly across all pages.
+*/
 :root {
-  --background: rgb(10, 10, 10);
-  --foreground: rgb(250, 250, 250);
-  --card: rgb(23, 23, 23);
-  --card-foreground: rgb(250, 250, 250);
+  /* Background colors */
+  --background: rgb(10, 10, 10);           /* Main page background - very dark */
+  --foreground: rgb(250, 250, 250);        /* Main text color - off-white */
+
+  /* Card and component colors */
+  --card: rgb(23, 23, 23);                 /* Card background - slightly lighter than main bg */
+  --card-foreground: rgb(250, 250, 250);   /* Text on cards */
+
+  /* Primary colors (main brand color - white) */
   --primary: rgb(250, 250, 250);
   --primary-foreground: rgb(23, 23, 23);
+
+  /* Secondary colors (subtle backgrounds) */
   --secondary: rgb(38, 38, 38);
   --secondary-foreground: rgb(250, 250, 250);
+
+  /* Muted colors (less prominent text/backgrounds) */
   --muted: rgb(38, 38, 38);
   --muted-foreground: rgb(161, 161, 161);
-  --destructive: rgb(220, 38, 38);
+
+  /* Accent color (red - for calls to action) */
+  --destructive: rgb(220, 38, 38);         /* Bright red for buttons and highlights */
   --destructive-foreground: rgb(250, 250, 250);
-  --border: rgb(56, 56, 56);
-  --input: rgb(56, 56, 56);
-  --radius: 0.5rem;
+
+  /* UI elements */
+  --border: rgb(56, 56, 56);               /* Border color for cards, inputs, etc. */
+  --input: rgb(56, 56, 56);                /* Input field backgrounds */
+  --radius: 0.5rem;                        /* Border radius for rounded corners */
 }
 
-/* --- 2. GLOBAL STYLES --- */
+/* ========================================
+   2. GLOBAL STYLES
+   ======================================== */
+/*
+  Base styles that apply to the entire website
+*/
 body {
   font-family: var(--font-sans);
   background-color: var(--background);
   color: var(--foreground);
-  overflow-x: hidden;
+  overflow-x: hidden;                      /* Prevent horizontal scrolling */
 }
 
-/* --- 3. COMPONENTS --- */
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
 
-/* Buttons */
+/* ========================================
+   3. BUTTON COMPONENTS
+   ======================================== */
+/*
+  Reusable button styles with different variants
+  Usage: <button class="btn btn-primary">Click Me</button>
+*/
+
+/* Base button style - shared by all button variants */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -42,68 +78,110 @@ body {
   padding: 0 2rem;
   border-radius: var(--radius);
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease;               /* Smooth transitions for hover effects */
   cursor: pointer;
+  border: none;                            /* Remove default button border */
+  text-decoration: none;                   /* For when used with <a> tags */
 }
 
+/* Primary button - white background (main CTA) */
 .btn-primary {
   background-color: var(--primary);
   color: var(--primary-foreground);
 }
-.btn-primary:hover { opacity: 0.9; transform: translateY(-2px); }
+.btn-primary:hover {
+  opacity: 0.9;                            /* Slight fade on hover */
+  transform: translateY(-2px);             /* Lift effect on hover */
+  box-shadow: 0 4px 12px rgba(250, 250, 250, 0.2);
+}
 
+/* Destructive button - red background (important actions) */
 .btn-destructive {
   background-color: var(--destructive);
   color: var(--destructive-foreground);
 }
-.btn-destructive:hover { background-color: rgb(185, 28, 28); }
+.btn-destructive:hover {
+  background-color: rgb(185, 28, 28);      /* Darker red on hover */
+  transform: translateY(-2px);             /* Lift effect */
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+}
 
+/* Outline button - transparent with border */
 .btn-outline {
   border: 1px solid var(--border);
   background-color: transparent;
   color: var(--foreground);
 }
-.btn-outline:hover { background-color: var(--secondary); border-color: var(--foreground); }
+.btn-outline:hover {
+  background-color: var(--secondary);      /* Fill with secondary color on hover */
+  border-color: var(--foreground);         /* Brighter border on hover */
+}
 
-/* Cards */
+/* ========================================
+   4. CARD COMPONENTS
+   ======================================== */
+/*
+  Card component used for packages, workouts, testimonials
+  Provides consistent styling with hover effects
+*/
 .fitness-card {
   background-color: var(--card);
   border: 1px solid var(--border);
-  border-radius: 0.75rem;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 0.75rem;                  /* Slightly more rounded than buttons */
+  overflow: hidden;                        /* Ensure child elements don't overflow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 .fitness-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--destructive);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+  transform: translateY(-5px);             /* Lift card on hover */
+  border-color: var(--destructive);        /* Red border on hover */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);  /* Deep shadow */
 }
 
-/* Forms (Dark Mode Fix) */
+/* ========================================
+   5. FORM ELEMENTS
+   ======================================== */
+/*
+  Styled form inputs that match the dark theme
+  Works with text inputs, textareas, and email inputs
+*/
 .form-input {
   display: block;
   width: 100%;
   border-radius: var(--radius);
   border: 1px solid var(--border);
-  background-color: var(--card);
-  color: var(--foreground);
+  background-color: var(--card);           /* Dark background for better visibility */
+  color: var(--foreground);                /* White text */
   padding: 0.75rem 1rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
-  outline: none;
-  transition: border-color 0.2s;
+  outline: none;                           /* Remove default outline */
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
+
+/* Focus state - red border when user clicks into field */
 .form-input:focus {
   border-color: var(--destructive);
-  box-shadow: 0 0 0 1px var(--destructive);
+  box-shadow: 0 0 0 1px var(--destructive); /* Subtle glow effect */
 }
 
-/* --- 4. NEW SECTIONS CSS --- */
+/* Placeholder text color */
+.form-input::placeholder {
+  color: var(--muted-foreground);
+  opacity: 0.6;
+}
 
-/* FAQ Accordion */
+/* ========================================
+   6. FAQ ACCORDION
+   ======================================== */
+/*
+  Interactive FAQ section with expandable answers
+  JavaScript handles the toggle functionality
+*/
 .faq-item {
   border-bottom: 1px solid var(--border);
 }
+
+/* Question button (clickable) */
 .faq-question {
   width: 100%;
   text-align: left;
@@ -114,46 +192,91 @@ body {
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+  background: none;                        /* Remove button background */
+  border: none;                            /* Remove button border */
+  color: var(--foreground);
+  transition: color 0.2s ease;
 }
-.faq-question:hover { color: var(--destructive); }
-.faq-answer {
-  display: none;
-  padding-bottom: 1.5rem;
-  color: var(--muted-foreground);
-  line-height: 1.6;
+.faq-question:hover {
+  color: var(--destructive);               /* Red text on hover */
 }
 
-/* Gallery */
+/* Answer section (hidden by default) */
+.faq-answer {
+  display: none;                           /* Hidden until question is clicked */
+  padding-bottom: 1.5rem;
+  color: var(--muted-foreground);
+  line-height: 1.6;                        /* Better readability */
+}
+
+/* Arrow rotation animation */
+.faq-question span {
+  transition: transform 0.3s ease;
+}
+.faq-question span.rotate-180 {
+  transform: rotate(180deg);               /* Rotate arrow when FAQ is open */
+}
+
+/* ========================================
+   7. GALLERY GRID
+   ======================================== */
+/*
+  Responsive image gallery used on homepage
+  Adapts from 2 columns on mobile to 4 on desktop
+*/
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);   /* 2 columns on mobile */
   gap: 1rem;
 }
+
 @media (min-width: 768px) {
-  .gallery-grid { grid-template-columns: repeat(4, 1fr); }
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns on tablet/desktop */
+  }
 }
+
+/* Individual gallery items */
 .gallery-item {
   position: relative;
   border-radius: var(--radius);
   overflow: hidden;
-  aspect-ratio: 1/1;
+  aspect-ratio: 1/1;                       /* Perfect square */
+  border: 1px solid var(--border);
 }
+
 .gallery-item img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover;                       /* Crop image to fill container */
   transition: transform 0.5s ease;
 }
-.gallery-item:hover img { transform: scale(1.1); }
 
-/* Testimonials */
+/* Zoom effect on hover */
+.gallery-item:hover img {
+  transform: scale(1.1);                   /* Slight zoom */
+}
+
+/* ========================================
+   8. TESTIMONIAL CARDS
+   ======================================== */
+/*
+  Customer testimonial cards with quote styling
+*/
 .testimonial-card {
   background-color: var(--card);
   padding: 2rem;
   border-radius: var(--radius);
   border: 1px solid var(--border);
   position: relative;
+  transition: border-color 0.3s ease;
 }
+
+.testimonial-card:hover {
+  border-color: var(--muted-foreground);
+}
+
+/* Large decorative quote mark */
 .quote-icon {
   font-size: 4rem;
   position: absolute;
@@ -162,28 +285,136 @@ body {
   color: var(--secondary);
   opacity: 0.5;
   font-family: serif;
+  user-select: none;                       /* Prevent text selection */
 }
 
-/* Animations */
+/* ========================================
+   9. SCROLL ANIMATIONS
+   ======================================== */
+/*
+  Fade-in animations triggered by JavaScript
+  Elements start invisible and fade in when scrolled into view
+*/
 .fade-in-section {
-  opacity: 0;
-  transform: translateY(30px);
+  opacity: 0;                              /* Start invisible */
+  transform: translateY(30px);             /* Start slightly below */
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
+
+/* When element becomes visible (class added by JS) */
 .fade-in-section.is-visible {
-  opacity: 1;
-  transform: none;
+  opacity: 1;                              /* Fully visible */
+  transform: none;                         /* Return to original position */
 }
 
-/* --- 5. UTILITIES (FIXES PADDING ISSUES) --- */
+/* ========================================
+   10. UTILITY CLASSES
+   ======================================== */
+/*
+  Reusable spacing utility for sections
+  Responsive padding that adjusts based on screen size
+*/
 .section-padding {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 4rem;                       /* Mobile: smaller padding */
+  padding-bottom: 4rem;
 }
 
 @media (min-width: 768px) {
   .section-padding {
-    padding-top: 8rem;
+    padding-top: 8rem;                     /* Desktop: larger padding */
     padding-bottom: 8rem;
+  }
+}
+
+/* Section title styling */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 3rem;
+  }
+}
+
+/* ========================================
+   11. NAVIGATION ENHANCEMENTS
+   ======================================== */
+/*
+  Additional styles for sticky navigation
+*/
+nav {
+  backdrop-filter: blur(10px);             /* Blur effect for modern look */
+  -webkit-backdrop-filter: blur(10px);     /* Safari support */
+}
+
+/* ========================================
+   12. PRICING TOGGLE BUTTONS
+   ======================================== */
+/*
+  Special styling for pricing period toggle buttons
+*/
+.pricing-toggle-btn {
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+/* ========================================
+   13. RESPONSIVE UTILITIES
+   ======================================== */
+/*
+  Hide/show elements based on screen size
+*/
+@media (max-width: 767px) {
+  /* Stack elements vertically on mobile */
+  .mobile-stack {
+    flex-direction: column;
+  }
+}
+
+/* ========================================
+   14. PRINT STYLES (Optional)
+   ======================================== */
+/*
+  Optimize page for printing (college assignment documentation)
+*/
+@media print {
+  nav, footer {
+    display: none;                         /* Hide navigation when printing */
+  }
+
+  body {
+    background-color: white;
+    color: black;
+  }
+
+  .btn {
+    border: 1px solid black;               /* Show button outlines in print */
+  }
+}
+
+/* ========================================
+   15. ACCESSIBILITY IMPROVEMENTS
+   ======================================== */
+/*
+  Better focus indicators for keyboard navigation
+*/
+a:focus-visible,
+button:focus-visible,
+.form-input:focus-visible {
+  outline: 2px solid var(--destructive);
+  outline-offset: 2px;
+}
+
+/* Reduced motion for users who prefer less animation */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

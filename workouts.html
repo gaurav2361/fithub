@@ -1,128 +1,349 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- ============================================
+         META TAGS - Essential page information
+         ============================================ -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore world-class training programs at FitHub - Strength Training, HIIT, Yoga, CrossFit, Boxing, and more.">
+    <meta name="keywords" content="gym, fitness, workout programs, training, HIIT, CrossFit, yoga">
+    <meta name="author" content="FitHub">
     <title>Workouts - FitHub</title>
+
+    <!-- ============================================
+         EXTERNAL LIBRARIES & STYLESHEETS
+         ============================================ -->
+    <!-- jQuery - JavaScript library for DOM manipulation -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Tailwind CSS v4 - Utility-first CSS framework -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Custom stylesheet with FitHub branding -->
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google Fonts - Inter font family -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <!-- ============================================
+         NAVIGATION BAR
+         Sticky navigation that stays at top while scrolling
+         ============================================ -->
     <nav class="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur p-4">
         <div class="container mx-auto flex items-center justify-between max-w-7xl">
-            <a href="index.html" class="text-2xl font-bold tracking-tighter">FitHub<span class="text-destructive">.</span></a>
+
+            <!-- Logo/Brand -->
+            <a href="index.html" class="text-2xl font-bold tracking-tighter">
+                FitHub<span class="text-destructive">.</span>
+            </a>
+
+            <!-- Desktop Navigation Links (hidden on mobile) -->
             <div class="hidden md:flex gap-8">
-                <a href="index.html" class="text-muted-foreground hover:text-foreground">Home</a>
-                <a href="packages.html" class="text-muted-foreground hover:text-foreground">Packages</a>
-                <a href="workouts.html" class="text-destructive font-medium">Workouts</a>
-                <a href="contact.html" class="text-muted-foreground hover:text-foreground">Contact</a>
+                <a href="index.html" class="text-muted-foreground hover:text-foreground transition-colors">
+                    Home
+                </a>
+                <a href="packages.html" class="text-muted-foreground hover:text-foreground transition-colors">
+                    Packages
+                </a>
+                <a href="workouts.html" class="text-destructive font-medium">
+                    Workouts
+                </a>
+                <a href="contact.html" class="text-muted-foreground hover:text-foreground transition-colors">
+                    Contact
+                </a>
             </div>
-            <button id="menu-btn" class="md:hidden p-2 text-foreground cursor-pointer">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+
+            <!-- Mobile Menu Button (hamburger icon) -->
+            <button id="menu-btn" class="md:hidden p-2 text-foreground cursor-pointer" aria-label="Toggle menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="4" x2="20" y1="12" y2="12"/>
+                    <line x1="4" x2="20" y1="6" y2="6"/>
+                    <line x1="4" x2="20" y1="18" y2="18"/>
+                </svg>
             </button>
         </div>
+
+        <!-- Mobile Menu (slides down when hamburger is clicked) -->
         <div id="mobile-menu" class="hidden md:hidden border-t border-border bg-background p-4">
             <div class="flex flex-col space-y-4">
-                <a href="index.html" class="text-muted-foreground">Home</a>
-                <a href="packages.html" class="text-muted-foreground">Packages</a>
+                <a href="index.html" class="text-muted-foreground hover:text-foreground">Home</a>
+                <a href="packages.html" class="text-muted-foreground hover:text-foreground">Packages</a>
                 <a href="workouts.html" class="font-medium text-destructive">Workouts</a>
-                <a href="contact.html" class="text-muted-foreground">Contact</a>
+                <a href="contact.html" class="text-muted-foreground hover:text-foreground">Contact</a>
             </div>
         </div>
     </nav>
 
+    <!-- ============================================
+         HERO SECTION
+         Page title and description
+         ============================================ -->
     <section class="section-padding pt-32">
         <div class="container mx-auto px-4 max-w-7xl">
 
+            <!-- Page Header -->
             <div class="text-center mb-16 max-w-2xl mx-auto fade-in-section">
                 <h1 class="section-title mb-4">World-Class Training Programs</h1>
                 <p class="text-xl text-muted-foreground mb-4">
                     Whether you want to build muscle, lose weight, or just move better, we have a class for you.
                 </p>
+                <!-- Decorative accent line -->
                 <div class="h-1 w-20 bg-destructive mx-auto rounded-full"></div>
             </div>
 
+            <!-- ============================================
+                 WORKOUT CARDS GRID
+                 Responsive grid showing all available programs
+                 ============================================ -->
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
+                <!-- Workout Card 1: Strength Training -->
                 <div class="fitness-card fade-in-section">
-                    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1470" class="w-full h-56 object-cover hover:scale-105 transition-transform duration-500">
+                    <img
+                        src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1470"
+                        alt="Strength Training - Weightlifting with barbells and dumbbells"
+                        class="w-full h-56 object-cover hover:scale-105 transition-transform duration-500"
+                        loading="lazy">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Strength Training</h3>
-                        <p class="text-muted-foreground text-sm">Compound lifts to build raw power and muscle density.</p>
+                        <p class="text-muted-foreground text-sm">
+                            Compound lifts to build raw power and muscle density. Focus on progressive overload.
+                        </p>
                     </div>
                 </div>
 
+                <!-- Workout Card 2: HIIT Cardio -->
                 <div class="fitness-card fade-in-section">
-                    <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=1470" class="w-full h-56 object-cover hover:scale-105 transition-transform duration-500">
+                    <img
+                        src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=1470"
+                        alt="HIIT Cardio - High intensity interval training"
+                        class="w-full h-56 object-cover hover:scale-105 transition-transform duration-500"
+                        loading="lazy">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">HIIT Cardio</h3>
-                        <p class="text-muted-foreground text-sm">High intensity intervals to burn fat fast.</p>
+                        <p class="text-muted-foreground text-sm">
+                            High intensity intervals to burn fat fast. Short bursts with maximum effort.
+                        </p>
                     </div>
                 </div>
 
+                <!-- Workout Card 3: Power Yoga -->
                 <div class="fitness-card fade-in-section">
-                    <img src="https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?q=80&w=1469" class="w-full h-56 object-cover hover:scale-105 transition-transform duration-500">
+                    <img
+                        src="https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?q=80&w=1469"
+                        alt="Power Yoga - Flexibility and balance training"
+                        class="w-full h-56 object-cover hover:scale-105 transition-transform duration-500"
+                        loading="lazy">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Power Yoga</h3>
-                        <p class="text-muted-foreground text-sm">Flexibility meets core strength in this flow.</p>
+                        <p class="text-muted-foreground text-sm">
+                            Flexibility meets core strength in this flow. Build balance and mindfulness.
+                        </p>
                     </div>
                 </div>
 
+                <!-- Workout Card 4: CrossFit -->
                 <div class="fitness-card fade-in-section">
-                    <img src="https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?q=80&w=1470" class="w-full h-56 object-cover hover:scale-105 transition-transform duration-500">
+                    <img
+                        src="https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?q=80&w=1470"
+                        alt="CrossFit - Functional fitness training"
+                        class="w-full h-56 object-cover hover:scale-105 transition-transform duration-500"
+                        loading="lazy">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">CrossFit</h3>
-                        <p class="text-muted-foreground text-sm">Functional fitness performed at high intensity.</p>
+                        <p class="text-muted-foreground text-sm">
+                            Functional fitness performed at high intensity. Constantly varied workouts.
+                        </p>
                     </div>
                 </div>
 
+                <!-- Workout Card 5: Boxing -->
                 <div class="fitness-card fade-in-section">
-                    <img src="https://images.unsplash.com/photo-1595078475328-1ab05d0a6a0e?q=80&w=1470" class="w-full h-56 object-cover hover:scale-105 transition-transform duration-500">
+                    <img
+                        src="https://images.unsplash.com/photo-1595078475328-1ab05d0a6a0e?q=80&w=1470"
+                        alt="Boxing - Combat sports training"
+                        class="w-full h-56 object-cover hover:scale-105 transition-transform duration-500"
+                        loading="lazy">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Boxing</h3>
-                        <p class="text-muted-foreground text-sm">Technical striking and conditioning.</p>
+                        <p class="text-muted-foreground text-sm">
+                            Technical striking and conditioning. Learn proper form and build endurance.
+                        </p>
                     </div>
                 </div>
 
+                <!-- Workout Card 6: Pilates -->
                 <div class="fitness-card fade-in-section">
-                    <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=1470" class="w-full h-56 object-cover hover:scale-105 transition-transform duration-500">
+                    <img
+                        src="https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=1470"
+                        alt="Pilates - Core strengthening exercises"
+                        class="w-full h-56 object-cover hover:scale-105 transition-transform duration-500"
+                        loading="lazy">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Pilates</h3>
-                        <p class="text-muted-foreground text-sm">Core stabilization and posture correction.</p>
+                        <p class="text-muted-foreground text-sm">
+                            Core stabilization and posture correction. Low-impact, high-focus training.
+                        </p>
                     </div>
                 </div>
 
+                <!-- Workout Card 7: Calisthenics -->
                 <div class="fitness-card fade-in-section">
-                    <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?q=80&w=1374" class="w-full h-56 object-cover hover:scale-105 transition-transform duration-500">
+                    <img
+                        src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?q=80&w=1374"
+                        alt="Calisthenics - Bodyweight training"
+                        class="w-full h-56 object-cover hover:scale-105 transition-transform duration-500"
+                        loading="lazy">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Calisthenics</h3>
-                        <p class="text-muted-foreground text-sm">Bodyweight mastery on bars and rings.</p>
+                        <p class="text-muted-foreground text-sm">
+                            Bodyweight mastery on bars and rings. Build incredible relative strength.
+                        </p>
                     </div>
                 </div>
 
+                <!-- Workout Card 8: Spinning -->
                 <div class="fitness-card fade-in-section">
-                    <img src="https://images.unsplash.com/photo-1594737625785-a6cbdabd333c?q=80&w=1470" class="w-full h-56 object-cover hover:scale-105 transition-transform duration-500">
+                    <img
+                        src="https://images.unsplash.com/photo-1594737625785-a6cbdabd333c?q=80&w=1470"
+                        alt="Spinning - Indoor cycling classes"
+                        class="w-full h-56 object-cover hover:scale-105 transition-transform duration-500"
+                        loading="lazy">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Spinning</h3>
-                        <p class="text-muted-foreground text-sm">Endurance cycling in a group environment.</p>
+                        <p class="text-muted-foreground text-sm">
+                            Endurance cycling in a group environment. Music-driven cardio sessions.
+                        </p>
                     </div>
                 </div>
 
+                <!-- Workout Card 9: Zumba -->
                 <div class="fitness-card fade-in-section">
-                    <img src="https://images.unsplash.com/photo-1517130038641-a774d04afb3c?q=80&w=1470" class="w-full h-56 object-cover hover:scale-105 transition-transform duration-500">
+                    <img
+                        src="https://images.unsplash.com/photo-1517130038641-a774d04afb3c?q=80&w=1470"
+                        alt="Zumba - Dance fitness classes"
+                        class="w-full h-56 object-cover hover:scale-105 transition-transform duration-500"
+                        loading="lazy">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Zumba</h3>
-                        <p class="text-muted-foreground text-sm">Dance fitness to Latin rhythms.</p>
+                        <p class="text-muted-foreground text-sm">
+                            Dance fitness to Latin rhythms. Fun cardio workout that doesn't feel like work.
+                        </p>
                     </div>
                 </div>
 
             </div>
+
+            <!-- ============================================
+                 CALL TO ACTION SECTION
+                 Encourage users to book a class
+                 ============================================ -->
+            <div class="mt-20 text-center bg-card border border-border rounded-2xl p-12 fade-in-section">
+                <h2 class="text-3xl font-bold mb-4">Ready to Start Training?</h2>
+                <p class="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
+                    All our classes are included in Standard, Pro, and Elite memberships.
+                    Book your first session for free today.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="packages.html" class="btn btn-destructive">
+                        View Membership Plans
+                    </a>
+                    <a href="contact.html" class="btn btn-outline">
+                        Schedule Free Trial
+                    </a>
+                </div>
+            </div>
+
         </div>
     </section>
 
+    <!-- ============================================
+         FOOTER
+         Site-wide footer with links and copyright
+         ============================================ -->
+    <footer class="bg-card py-12 mt-16 border-t border-border">
+        <div class="container mx-auto px-4 max-w-7xl">
+
+            <!-- Footer Content Grid -->
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+
+                <!-- Column 1: Brand -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">
+                        FitHub<span class="text-destructive">.</span>
+                    </h3>
+                    <p class="text-muted-foreground text-sm">
+                        Transform your body, elevate your mind. Join the fitness revolution.
+                    </p>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-muted-foreground">
+                        <li><a href="index.html" class="hover:text-foreground transition-colors">Home</a></li>
+                        <li><a href="packages.html" class="hover:text-foreground transition-colors">Packages</a></li>
+                        <li><a href="workouts.html" class="hover:text-foreground transition-colors">Workouts</a></li>
+                        <li><a href="contact.html" class="hover:text-foreground transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Programs -->
+                <div>
+                    <h4 class="font-semibold mb-4">Programs</h4>
+                    <ul class="space-y-2 text-sm text-muted-foreground">
+                        <li>Strength Training</li>
+                        <li>HIIT Cardio</li>
+                        <li>Yoga & Pilates</li>
+                        <li>CrossFit</li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Contact Info -->
+                <div>
+                    <h4 class="font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-sm text-muted-foreground">
+                        <li>📍 123 Fitness Ave, New Delhi</li>
+                        <li>📞 +91 98765 43210</li>
+                        <li>✉️ support@fithub.com</li>
+                        <li>🕐 24/7 Access</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom: Social Links & Copyright -->
+            <div class="border-t border-border pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+
+                    <!-- Social Media Links -->
+                    <div class="flex gap-6 text-muted-foreground">
+                        <a href="#" class="hover:text-foreground transition-colors" aria-label="Instagram">
+                            Instagram
+                        </a>
+                        <a href="#" class="hover:text-foreground transition-colors" aria-label="Twitter">
+                            Twitter
+                        </a>
+                        <a href="#" class="hover:text-foreground transition-colors" aria-label="Facebook">
+                            Facebook
+                        </a>
+                    </div>
+
+                    <!-- Copyright Notice -->
+                    <p class="text-muted-foreground text-sm text-center">
+                        &copy; 2025 FitHub. Web Development Semester 5 Project.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+         JAVASCRIPT
+         Load custom scripts last for better performance
+         ============================================ -->
     <script src="./assets/js/script.js"></script>
 </body>
 </html>

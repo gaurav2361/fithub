@@ -1,225 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- ============================================
+         META TAGS - Essential page information
+         ============================================ -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Packages - FitHub</title>
+    <meta name="description" content="FitHub membership packages - Choose from Starter, Standard, Pro, or Elite plans. Flexible monthly, 6-month, and yearly options.">
+    <meta name="keywords" content="gym membership, fitness packages, gym plans, monthly membership, yearly gym pass">
+    <meta name="author" content="FitHub">
+    <title>Membership Packages - FitHub</title>
+
+    <!-- ============================================
+         EXTERNAL LIBRARIES & STYLESHEETS
+         ============================================ -->
+    <!-- jQuery - JavaScript library for DOM manipulation -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Tailwind CSS v4 - Utility-first CSS framework -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Custom stylesheet with FitHub branding -->
     <link rel="stylesheet" href="./assets/css/style.css">
+
+    <!-- Google Fonts - Inter font family (multiple weights) -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <!-- ============================================
+         NAVIGATION BAR
+         Sticky navigation that stays at top while scrolling
+         ============================================ -->
     <nav class="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur p-4">
         <div class="container mx-auto flex items-center justify-between max-w-7xl">
-            <a href="index.html" class="text-2xl font-bold tracking-tighter">FitHub<span class="text-destructive">.</span></a>
+
+            <!-- Logo/Brand -->
+            <a href="index.html" class="text-2xl font-bold tracking-tighter">
+                FitHub<span class="text-destructive">.</span>
+            </a>
+
+            <!-- Desktop Navigation Links (hidden on mobile) -->
             <div class="hidden md:flex gap-8">
-                <a href="index.html" class="text-muted-foreground hover:text-foreground">Home</a>
-                <a href="packages.html" class="text-destructive font-medium">Packages</a>
-                <a href="workouts.html" class="text-muted-foreground hover:text-foreground">Workouts</a>
-                <a href="contact.html" class="text-muted-foreground hover:text-foreground">Contact</a>
+                <a href="index.html" class="text-muted-foreground hover:text-foreground transition-colors">
+                    Home
+                </a>
+                <a href="packages.html" class="text-destructive font-medium">
+                    Packages
+                </a>
+                <a href="workouts.html" class="text-muted-foreground hover:text-foreground transition-colors">
+                    Workouts
+                </a>
+                <a href="contact.html" class="text-muted-foreground hover:text-foreground transition-colors">
+                    Contact
+                </a>
             </div>
-            <button id="menu-btn" class="md:hidden p-2 text-foreground cursor-pointer">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+
+            <!-- Mobile Menu Button (hamburger icon) -->
+            <button id="menu-btn" class="md:hidden p-2 text-foreground cursor-pointer" aria-label="Toggle menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="4" x2="20" y1="12" y2="12"/>
+                    <line x1="4" x2="20" y1="6" y2="6"/>
+                    <line x1="4" x2="20" y1="18" y2="18"/>
+                </svg>
             </button>
         </div>
+
+        <!-- Mobile Menu (slides down when hamburger is clicked) -->
         <div id="mobile-menu" class="hidden md:hidden border-t border-border bg-background p-4">
             <div class="flex flex-col space-y-4">
-                <a href="index.html" class="text-muted-foreground">Home</a>
+                <a href="index.html" class="text-muted-foreground hover:text-foreground">Home</a>
                 <a href="packages.html" class="font-medium text-destructive">Packages</a>
-                <a href="workouts.html" class="text-muted-foreground">Workouts</a>
-                <a href="contact.html" class="text-muted-foreground">Contact</a>
+                <a href="workouts.html" class="text-muted-foreground hover:text-foreground">Workouts</a>
+                <a href="contact.html" class="text-muted-foreground hover:text-foreground">Contact</a>
             </div>
         </div>
     </nav>
 
+    <!-- ============================================
+         PRICING HERO SECTION
+         Page title, description, and pricing toggle
+         ============================================ -->
     <section class="pt-32 pb-20 fade-in-section">
         <div class="container mx-auto px-4 max-w-7xl">
 
+            <!-- Header Content -->
             <div class="text-center mb-16 max-w-2xl mx-auto">
-                <h1 class="text-5xl font-extrabold mb-6 tracking-tight">Simple, Transparent Pricing</h1>
+                <h1 class="text-5xl font-extrabold mb-6 tracking-tight">
+                    Simple, Transparent Pricing
+                </h1>
                 <p class="text-muted-foreground text-xl mb-10">
                     No hidden fees. No contracts. Cancel anytime. Choose the plan that fits your ambition.
                 </p>
 
+                <!-- Pricing Period Toggle Buttons -->
                 <div class="inline-flex rounded-lg border border-border bg-card p-1.5 shadow-sm">
-                    <button data-period="monthly" class="pricing-toggle-btn btn px-6 py-2 text-sm bg-destructive text-white shadow-md rounded-md">Monthly</button>
-                    <button data-period="sixMonth" class="pricing-toggle-btn btn px-6 py-2 text-sm bg-transparent text-muted-foreground hover:text-foreground">6 Months</button>
-                    <button data-period="yearly" class="pricing-toggle-btn btn px-6 py-2 text-sm bg-transparent text-muted-foreground hover:text-foreground">1 Year</button>
+                    <button
+                        data-period="monthly"
+                        class="pricing-toggle-btn btn px-6 py-2 text-sm bg-destructive text-white shadow-md rounded-md"
+                        aria-label="Select monthly billing">
+                        Monthly
+                    </button>
+                    <button
+                        data-period="sixMonth"
+                        class="pricing-toggle-btn btn px-6 py-2 text-sm bg-transparent text-muted-foreground hover:text-foreground"
+                        aria-label="Select 6-month billing">
+                        6 Months
+                    </button>
+                    <button
+                        data-period="yearly"
+                        class="pricing-toggle-btn btn px-6 py-2 text-sm bg-transparent text-muted-foreground hover:text-foreground"
+                        aria-label="Select yearly billing">
+                        1 Year
+                    </button>
                 </div>
-                <p class="text-xs text-muted-foreground mt-3">Save up to 20% with annual billing</p>
+                <p class="text-xs text-muted-foreground mt-3">
+                    💰 Save up to 20% with annual billing
+                </p>
             </div>
 
+            <!-- ============================================
+                 PRICING CARDS GRID
+                 Four membership tiers displayed side by side
+                 ============================================ -->
             <div class="grid md:grid-cols-4 gap-6 items-start">
 
+                <!-- PLAN 1: STARTER -->
                 <div class="fitness-card p-8 flex flex-col h-full hover:border-muted-foreground/50 transition-all duration-300">
+                    <!-- Plan Name -->
                     <div class="mb-6">
                         <h3 class="text-lg font-bold text-foreground">Starter</h3>
                         <p class="text-sm text-muted-foreground">Essential access.</p>
                     </div>
+
+                    <!-- Price Display -->
                     <div class="flex items-baseline text-4xl font-extrabold mb-6">
                         <span class="price-amount">$29</span>
                         <span class="text-sm font-normal text-muted-foreground billing-text ml-1">/mo</span>
                     </div>
+
+                    <!-- Features List -->
                     <ul class="space-y-4 text-sm text-muted-foreground mb-8 flex-1">
-                        <li class="flex items-center"><span class="text-foreground mr-2">✓</span> Access 8am - 4pm</li>
-                        <li class="flex items-center"><span class="text-foreground mr-2">✓</span> Locker Access</li>
-                        <li class="flex items-center"><span class="text-foreground mr-2">✓</span> Cardio Zone Only</li>
-                        <li class="flex items-center"><span class="text-foreground mr-2">✓</span> 1 Orientation Session</li>
-                        <li class="flex items-center"><span class="text-foreground mr-2">✓</span> FitHub Mobile App</li>
+                        <li class="flex items-center">
+                            <span class="text-foreground mr-2">✓</span> Access 8am - 4pm
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-foreground mr-2">✓</span> Locker Access
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-foreground mr-2">✓</span> Cardio Zone Only
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-foreground mr-2">✓</span> 1 Orientation Session
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-foreground mr-2">✓</span> FitHub Mobile App
+                        </li>
                     </ul>
-                    <a href="contact.html" class="btn btn-outline w-full rounded-full border-muted-foreground/20 hover:border-destructive hover:text-destructive">Get Started</a>
+
+                    <!-- CTA Button -->
+                    <a href="contact.html" class="btn btn-outline w-full rounded-full border-muted-foreground/20 hover:border-destructive hover:text-destructive">
+                        Get Started
+                    </a>
                 </div>
 
+                <!-- PLAN 2: STANDARD (MOST POPULAR) -->
                 <div class="fitness-card p-8 bg-card border-destructive/50 shadow-2xl shadow-destructive/10 relative transform md:-translate-y-4 md:scale-105 z-10 flex flex-col h-full">
 
+                    <!-- Popular Badge -->
                     <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-destructive text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-lg tracking-wide uppercase">
                         Most Popular
                     </div>
 
+                    <!-- Plan Name -->
                     <div class="mb-6">
                         <h3 class="text-xl font-bold text-destructive">Standard</h3>
                         <p class="text-sm text-muted-foreground">For daily grinders.</p>
                     </div>
+
+                    <!-- Price Display (larger for emphasis) -->
                     <div class="flex items-baseline text-5xl font-extrabold mb-6">
                         <span class="price-amount">$49</span>
                         <span class="text-sm font-normal text-muted-foreground billing-text ml-1">/mo</span>
                     </div>
+
+                    <!-- Features List (bold text for standout features) -->
                     <ul class="space-y-4 text-sm text-foreground mb-8 flex-1">
-                        <li class="flex items-center font-medium"><span class="text-destructive mr-2">✓</span> 24/7 Gym Access</li>
-                        <li class="flex items-center font-medium"><span class="text-destructive mr-2">✓</span> All Group Classes</li>
-                        <li class="flex items-center font-medium"><span class="text-destructive mr-2">✓</span> Sauna & Steam Room</li>
-                        <li class="flex items-center"><span class="text-destructive mr-2">✓</span> Free High-Speed WiFi</li>
-                        <li class="flex items-center"><span class="text-destructive mr-2">✓</span> 1 Guest Pass/month</li>
-                        <li class="flex items-center"><span class="text-destructive mr-2">✓</span> Free Membership Freeze</li>
+                        <li class="flex items-center font-medium">
+                            <span class="text-destructive mr-2">✓</span> 24/7 Gym Access
+                        </li>
+                        <li class="flex items-center font-medium">
+                            <span class="text-destructive mr-2">✓</span> All Group Classes
+                        </li>
+                        <li class="flex items-center font-medium">
+                            <span class="text-destructive mr-2">✓</span> Sauna & Steam Room
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-destructive mr-2">✓</span> Free High-Speed WiFi
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-destructive mr-2">✓</span> 1 Guest Pass/month
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-destructive mr-2">✓</span> Free Membership Freeze
+                        </li>
                     </ul>
-                    <a href="contact.html" class="btn btn-destructive w-full rounded-full font-bold shadow-lg hover:bg-red-700">Join Now</a>
+
+                    <!-- CTA Button (prominent red) -->
+                    <a href="contact.html" class="btn btn-destructive w-full rounded-full font-bold shadow-lg hover:bg-red-700">
+                        Join Now
+                    </a>
                 </div>
 
+                <!-- PLAN 3: PRO -->
                 <div class="fitness-card p-8 flex flex-col h-full hover:border-muted-foreground/50 transition-all duration-300">
+                    <!-- Plan Name -->
                     <div class="mb-6">
                         <h3 class="text-lg font-bold text-foreground">Pro</h3>
                         <p class="text-sm text-muted-foreground">Serious results.</p>
                     </div>
+
+                    <!-- Price Display -->
                     <div class="flex items-baseline text-4xl font-extrabold mb-6">
                         <span class="price-amount">$79</span>
                         <span class="text-sm font-normal text-muted-foreground billing-text ml-1">/mo</span>
                     </div>
+
+                    <!-- Features List -->
                     <ul class="space-y-4 text-sm text-muted-foreground mb-8 flex-1">
-                        <li class="flex items-center"><span class="text-foreground mr-2">✓</span> Everything in Standard</li>
-                        <li class="flex items-center"><span class="text-foreground mr-2">✓</span> 5 Personal Training Sessions</li>
-                        <li class="flex items-center"><span class="text-foreground mr-2">✓</span> Advanced Nutrition App</li>
-                        <li class="flex items-center"><span class="text-foreground mr-2">✓</span> Monthly Body Scan</li>
-                        <li class="flex items-center"><span class="text-foreground mr-2">✓</span> Bring a Friend (Weekends)</li>
+                        <li class="flex items-center">
+                            <span class="text-foreground mr-2">✓</span> Everything in Standard
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-foreground mr-2">✓</span> 5 Personal Training Sessions
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-foreground mr-2">✓</span> Advanced Nutrition App
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-foreground mr-2">✓</span> Monthly Body Scan
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-foreground mr-2">✓</span> Bring a Friend (Weekends)
+                        </li>
                     </ul>
-                    <a href="contact.html" class="btn btn-outline w-full rounded-full border-muted-foreground/20 hover:border-destructive hover:text-destructive">Get Started</a>
+
+                    <!-- CTA Button -->
+                    <a href="contact.html" class="btn btn-outline w-full rounded-full border-muted-foreground/20 hover:border-destructive hover:text-destructive">
+                        Get Started
+                    </a>
                 </div>
 
+                <!-- PLAN 4: ELITE -->
                 <div class="fitness-card p-8 flex flex-col h-full hover:border-muted-foreground/50 transition-all duration-300">
+                    <!-- Plan Name -->
                     <div class="mb-6">
                         <h3 class="text-lg font-bold text-foreground">Elite</h3>
                         <p class="text-sm text-muted-foreground">All-inclusive.</p>
                     </div>
+
+                    <!-- Price Display -->
                     <div class="flex items-baseline text-4xl font-extrabold mb-6">
                         <span class="price-amount">$129</span>
                         <span class="text-sm font-normal text-muted-foreground billing-text ml-1">/mo</span>
                     </div>
+
+                    <!-- Features List (premium features) -->
                     <ul class="space-y-4 text-sm text-muted-foreground mb-8 flex-1">
-                        <li class="flex items-center"><span class="text-foreground mr-2">✓</span> Unlimited PT Sessions</li>
-                        <li class="flex items-center"><span class="text-foreground mr-2">✓</span> Massage Therapy (2x/mo)</li>
-                        <li class="flex items-center"><span class="text-foreground mr-2">✓</span> Private Locker & Laundry</li>
-                        <li class="flex items-center"><span class="text-foreground mr-2">✓</span> Priority Class Booking</li>
-                        <li class="flex items-center"><span class="text-foreground mr-2">✓</span> Free Merchandise Kit</li>
-                        <li class="flex items-center"><span class="text-foreground mr-2">✓</span> 24/7 Support Line</li>
+                        <li class="flex items-center">
+                            <span class="text-foreground mr-2">✓</span> Unlimited PT Sessions
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-foreground mr-2">✓</span> Massage Therapy (2x/mo)
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-foreground mr-2">✓</span> Private Locker & Laundry
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-foreground mr-2">✓</span> Priority Class Booking
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-foreground mr-2">✓</span> Free Merchandise Kit
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-foreground mr-2">✓</span> 24/7 Support Line
+                        </li>
                     </ul>
-                    <a href="contact.html" class="btn btn-outline w-full rounded-full border-muted-foreground/20 hover:border-destructive hover:text-destructive">Get Started</a>
+
+                    <!-- CTA Button -->
+                    <a href="contact.html" class="btn btn-outline w-full rounded-full border-muted-foreground/20 hover:border-destructive hover:text-destructive">
+                        Get Started
+                    </a>
                 </div>
 
             </div>
-<section class="section-padding fade-in-section">
-        <div class="container mx-auto px-4 max-w-7xl mb-2">
-            <h2 class="text-4xl font-bold text-center mb-10">Success Stories</h2>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                <div class="testimonial-card">
-                    <div class="quote-icon">"</div>
-                    <div class="flex items-center gap-4 mb-4">
-                        <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-12 h-12 rounded-full border-2 border-destructive">
-                        <div>
-                            <h4 class="font-bold">Sarah Jenkins</h4>
-                            <p class="text-xs text-destructive">Lost 15kg</p>
-                        </div>
-                    </div>
-                    <p class="text-muted-foreground">"FitHub changed my entire mindset. I started just wanting to lose weight, but now I'm training for a marathon!"</p>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="quote-icon">"</div>
-                    <div class="flex items-center gap-4 mb-4">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-12 h-12 rounded-full border-2 border-destructive">
-                        <div>
-                            <h4 class="font-bold">Mike Ross</h4>
-                            <p class="text-xs text-destructive">Muscle Gain</p>
-                        </div>
-                    </div>
-                    <p class="text-muted-foreground">"The equipment here is world-class. I've put on 10kg of muscle in 6 months thanks to the trainers."</p>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="quote-icon">"</div>
-                    <div class="flex items-center gap-4 mb-4">
-                        <img src="https://randomuser.me/api/portraits/women/68.jpg" class="w-12 h-12 rounded-full border-2 border-destructive">
-                        <div>
-                            <h4 class="font-bold">Emily Blunt</h4>
-                            <p class="text-xs text-destructive">Rehab & Mobility</p>
-                        </div>
-                    </div>
-                    <p class="text-muted-foreground">"I came here after a knee injury. The Yoga and Pilates classes helped me recover fully. Highly recommend."</p>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="quote-icon">"</div>
-                    <div class="flex items-center gap-4 mb-4">
-                        <img src="https://randomuser.me/api/portraits/men/86.jpg" class="w-12 h-12 rounded-full border-2 border-destructive">
-                        <div>
-                            <h4 class="font-bold">David Chen</h4>
-                            <p class="text-xs text-destructive">Powerlifting</p>
-                        </div>
-                    </div>
-                    <p class="text-muted-foreground">"Best deadlift platforms in the city. If you are serious about lifting heavy, this is the only place to be."</p>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="quote-icon">"</div>
-                    <div class="flex items-center gap-4 mb-4">
-                        <img src="https://randomuser.me/api/portraits/women/12.jpg" class="w-12 h-12 rounded-full border-2 border-destructive">
-                        <div>
-                            <h4 class="font-bold">Lisa Ray</h4>
-                            <p class="text-xs text-destructive">General Fitness</p>
-                        </div>
-                    </div>
-                    <p class="text-muted-foreground">"The community is so supportive. No one judges you here, everyone just wants to see you succeed."</p>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="quote-icon">"</div>
-                    <div class="flex items-center gap-4 mb-4">
-                        <img src="https://randomuser.me/api/portraits/men/45.jpg" class="w-12 h-12 rounded-full border-2 border-destructive">
-                        <div>
-                            <h4 class="font-bold">James Bond</h4>
-                            <p class="text-xs text-destructive">Functional Training</p>
-                        </div>
-                    </div>
-                    <p class="text-muted-foreground">"The HIIT classes are intense but amazing. I've never felt fitter in my life. Great atmosphere!"</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
+            <!-- ============================================
+                 BRAND TRUST SECTION
+                 Show partner/sponsor logos
+                 ============================================ -->
             <div class="mt-20 text-center border-t border-border pt-12">
-                <p class="text-sm text-muted-foreground uppercase tracking-widest mb-6">Trusted by athletes from</p>
+                <p class="text-sm text-muted-foreground uppercase tracking-widest mb-6">
+                    Trusted by athletes from
+                </p>
                 <div class="flex flex-wrap justify-center gap-8 opacity-50 grayscale">
                     <span class="text-xl font-bold">NIKE</span>
                     <span class="text-xl font-bold">ADIDAS</span>
@@ -232,17 +315,248 @@
         </div>
     </section>
 
+    <!-- ============================================
+         TESTIMONIALS SECTION
+         Social proof from satisfied members
+         ============================================ -->
+    <section class="section-padding fade-in-section bg-card/10">
+        <div class="container mx-auto px-4 max-w-7xl mb-2">
+            <h2 class="text-4xl font-bold text-center mb-10">Success Stories</h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg"
+                             alt="Sarah Jenkins - Lost 15kg at FitHub"
+                             class="w-12 h-12 rounded-full border-2 border-destructive"
+                             loading="lazy">
+                        <div>
+                            <h4 class="font-bold">Sarah Jenkins</h4>
+                            <p class="text-xs text-destructive">Lost 15kg</p>
+                        </div>
+                    </div>
+                    <p class="text-muted-foreground">
+                        "FitHub changed my entire mindset. I started just wanting to lose weight, but now I'm training for a marathon!"
+                    </p>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg"
+                             alt="Mike Ross - Gained 10kg muscle at FitHub"
+                             class="w-12 h-12 rounded-full border-2 border-destructive"
+                             loading="lazy">
+                        <div>
+                            <h4 class="font-bold">Mike Ross</h4>
+                            <p class="text-xs text-destructive">Muscle Gain</p>
+                        </div>
+                    </div>
+                    <p class="text-muted-foreground">
+                        "The equipment here is world-class. I've put on 10kg of muscle in 6 months thanks to the trainers."
+                    </p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg"
+                             alt="Emily Blunt - Recovered from injury at FitHub"
+                             class="w-12 h-12 rounded-full border-2 border-destructive"
+                             loading="lazy">
+                        <div>
+                            <h4 class="font-bold">Emily Blunt</h4>
+                            <p class="text-xs text-destructive">Rehab & Mobility</p>
+                        </div>
+                    </div>
+                    <p class="text-muted-foreground">
+                        "I came here after a knee injury. The Yoga and Pilates classes helped me recover fully. Highly recommend."
+                    </p>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/86.jpg"
+                             alt="David Chen - Powerlifter at FitHub"
+                             class="w-12 h-12 rounded-full border-2 border-destructive"
+                             loading="lazy">
+                        <div>
+                            <h4 class="font-bold">David Chen</h4>
+                            <p class="text-xs text-destructive">Powerlifting</p>
+                        </div>
+                    </div>
+                    <p class="text-muted-foreground">
+                        "Best deadlift platforms in the city. If you are serious about lifting heavy, this is the only place to be."
+                    </p>
+                </div>
+
+                <!-- Testimonial 5 -->
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/12.jpg"
+                             alt="Lisa Ray - FitHub community member"
+                             class="w-12 h-12 rounded-full border-2 border-destructive"
+                             loading="lazy">
+                        <div>
+                            <h4 class="font-bold">Lisa Ray</h4>
+                            <p class="text-xs text-destructive">General Fitness</p>
+                        </div>
+                    </div>
+                    <p class="text-muted-foreground">
+                        "The community is so supportive. No one judges you here, everyone just wants to see you succeed."
+                    </p>
+                </div>
+
+                <!-- Testimonial 6 -->
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/45.jpg"
+                             alt="James Bond - HIIT enthusiast at FitHub"
+                             class="w-12 h-12 rounded-full border-2 border-destructive"
+                             loading="lazy">
+                        <div>
+                            <h4 class="font-bold">James Bond</h4>
+                            <p class="text-xs text-destructive">Functional Training</p>
+                        </div>
+                    </div>
+                    <p class="text-muted-foreground">
+                        "The HIIT classes are intense but amazing. I've never felt fitter in my life. Great atmosphere!"
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FINAL CTA SECTION
+         Encourage users to take action
+         ============================================ -->
+    <section class="py-20 bg-destructive text-white text-center fade-in-section">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <h2 class="text-4xl font-bold mb-6">Ready to Transform Your Life?</h2>
+            <p class="text-xl mb-8 opacity-90">
+                Join thousands of members who have already started their fitness journey. Your first session is completely free.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="inline-block bg-white text-destructive font-bold py-4 px-10 rounded-lg text-lg hover:bg-gray-100 transition shadow-lg">
+                    Book Free Trial
+                </a>
+                <a href="workouts.html" class="inline-block bg-transparent border-2 border-white text-white font-bold py-4 px-10 rounded-lg text-lg hover:bg-white hover:text-destructive transition">
+                    View Programs
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+         Site-wide footer with links and copyright
+         ============================================ -->
+    <footer class="bg-card py-12 mt-0 border-t border-border">
+        <div class="container mx-auto px-4 max-w-7xl">
+
+            <!-- Footer Content Grid -->
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+
+                <!-- Column 1: Brand -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">
+                        FitHub<span class="text-destructive">.</span>
+                    </h3>
+                    <p class="text-muted-foreground text-sm">
+                        Transform your body, elevate your mind. Join the fitness revolution.
+                    </p>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-muted-foreground">
+                        <li><a href="index.html" class="hover:text-foreground transition-colors">Home</a></li>
+                        <li><a href="packages.html" class="hover:text-foreground transition-colors">Packages</a></li>
+                        <li><a href="workouts.html" class="hover:text-foreground transition-colors">Workouts</a></li>
+                        <li><a href="contact.html" class="hover:text-foreground transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Programs -->
+                <div>
+                    <h4 class="font-semibold mb-4">Programs</h4>
+                    <ul class="space-y-2 text-sm text-muted-foreground">
+                        <li>Strength Training</li>
+                        <li>HIIT Cardio</li>
+                        <li>Yoga & Pilates</li>
+                        <li>CrossFit</li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Contact Info -->
+                <div>
+                    <h4 class="font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-sm text-muted-foreground">
+                        <li>📍 123 Fitness Ave, New Delhi</li>
+                        <li>📞 +91 98765 43210</li>
+                        <li>✉️ support@fithub.com</li>
+                        <li>🕐 24/7 Access</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom: Social Links & Copyright -->
+            <div class="border-t border-border pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+
+                    <!-- Social Media Links -->
+                    <div class="flex gap-6 text-muted-foreground">
+                        <a href="#" class="hover:text-foreground transition-colors" aria-label="Instagram">
+                            Instagram
+                        </a>
+                        <a href="#" class="hover:text-foreground transition-colors" aria-label="Twitter">
+                            Twitter
+                        </a>
+                        <a href="#" class="hover:text-foreground transition-colors" aria-label="Facebook">
+                            Facebook
+                        </a>
+                    </div>
+
+                    <!-- Copyright Notice -->
+                    <p class="text-muted-foreground text-sm text-center">
+                        &copy; 2025 FitHub. Web Development Semester 5 Project.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+         JAVASCRIPT
+         Load custom scripts last for better performance
+         ============================================ -->
     <script src="./assets/js/script.js"></script>
 
+    <!-- Additional inline script for pricing toggle active state -->
     <script>
+        // This script ensures pricing buttons maintain proper styling
+        // when clicked and updates prices dynamically
         $(document).ready(function() {
+            // Ensure pricing toggle buttons maintain proper styling
             $('.pricing-toggle-btn').on('click', function() {
-                // Reset styles
+                // Remove active styles from all buttons
                 $('.pricing-toggle-btn')
                     .removeClass('bg-destructive text-white shadow-md')
                     .addClass('bg-transparent text-muted-foreground');
 
-                // Set Active style
+                // Add active styles to clicked button
                 $(this)
                     .removeClass('bg-transparent text-muted-foreground')
                     .addClass('bg-destructive text-white shadow-md');
