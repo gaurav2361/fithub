@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workouts - FitHub</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-background text-foreground">
+
+    <nav class="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur p-4">
+        <div class="container mx-auto flex justify-between max-w-7xl">
+            <a href="index.html" class="text-2xl font-bold">FitHub.</a>
+            <div class="hidden md:flex gap-8">
+                <a href="index.html" class="text-muted-foreground">Home</a>
+                <a href="packages.html" class="text-muted-foreground">Packages</a>
+                <a href="workouts.html" class="text-foreground font-medium">Workouts</a>
+                <a href="contact.html" class="text-muted-foreground">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-16">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <h1 class="text-4xl font-bold mb-12 text-center">Training Programs</h1>
+
+            <div class="grid md:grid-cols-3 gap-8">
+
+                <div class="group relative overflow-hidden rounded-lg bg-card border border-border">
+                    <div class="aspect-video w-full overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1470&auto=format&fit=crop"
+                             alt="Strength" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Strength & Hypertrophy</h3>
+                        <p class="text-muted-foreground mb-4">A scientifically backed program focusing on compound lifts to build raw power.</p>
+                        <a href="#" class="text-sm font-medium underline underline-offset-4">Learn More &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-lg bg-card border border-border">
+                    <div class="aspect-video w-full overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=1470&auto=format&fit=crop"
+                             alt="Cardio" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">HIIT & Endurance</h3>
+                        <p class="text-muted-foreground mb-4">High-intensity interval training designed to burn fat and boost cardiovascular health.</p>
+                        <a href="#" class="text-sm font-medium underline underline-offset-4">Learn More &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-lg bg-card border border-border">
+                    <div class="aspect-video w-full overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?q=80&w=1469&auto=format&fit=crop"
+                             alt="Yoga" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Mobility & Yoga</h3>
+                        <p class="text-muted-foreground mb-4">Recover faster and prevent injury with our guided flexibility sessions.</p>
+                        <a href="#" class="text-sm font-medium underline underline-offset-4">Learn More &rarr;</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</body>
+</html>
