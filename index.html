@@ -19,19 +19,16 @@
 </head>
 <body>
 
-    <!-- ============================================
-         NAVIGATION BAR
-         Sticky navigation that stays at top while scrolling
-         ============================================ -->
+    <!--NAVIGATION BAR-->
     <nav class="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur p-4">
         <div class="container mx-auto flex items-center justify-between max-w-7xl">
 
-            <!-- Logo/Brand -->
+            <!-- Logo-->
             <a href="index.html" class="text-2xl font-bold tracking-tighter">
                 FitHub<span class="text-destructive">.</span>
             </a>
 
-            <!-- Desktop Navigation Links (hidden on mobile) -->
+            <!-- Navigation Links -->
             <div class="hidden md:flex gap-8">
                 <a href="index.html" class="text-sm font-medium text-destructive transition-colors">
                     Home
@@ -47,7 +44,7 @@
                 </a>
             </div>
 
-            <!-- Mobile Menu Button (hamburger icon) -->
+            <!--Menu Button-->
             <button id="menu-btn" class="md:hidden p-2 text-foreground cursor-pointer" aria-label="Toggle menu">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <line x1="4" x2="20" y1="12" y2="12"/>
@@ -57,7 +54,7 @@
             </button>
         </div>
 
-        <!-- Mobile Menu (slides down when hamburger is clicked) -->
+
         <div id="mobile-menu" class="hidden md:hidden border-t border-border bg-background p-4">
             <div class="flex flex-col space-y-4">
                 <a href="index.html" class="font-medium text-destructive">Home</a>
@@ -68,23 +65,20 @@
         </div>
     </nav>
 
-    <!-- ============================================
-         HERO SECTION
-         Main landing section with background image and CTA
-         ============================================ -->
+
     <header class="relative min-h-[90vh] flex items-center justify-center overflow-hidden fade-in-section">
-        <!-- Background Image with Overlay -->
+
         <div class="absolute inset-0 z-0">
             <img src="./assets/images/hero-bg.png"
                  alt="Modern gym interior with state-of-the-art equipment"
                  class="w-full h-full object-cover opacity-25">
-            <!-- Gradient overlay for better text readability -->
+
             <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
         </div>
 
-        <!-- Hero Content -->
+
         <div class="container relative z-10 px-4 text-center max-w-4xl">
-            <!-- Badge/Tag -->
+
             <div class="inline-block border border-border bg-secondary/50 px-4 py-1 rounded-full mb-6 text-sm backdrop-blur">
                 🔥 Start your transformation today
             </div>
@@ -114,10 +108,7 @@
         </div>
     </header>
 
-    <!-- ============================================
-         STATS SECTION
-         Quick statistics to build credibility
-         ============================================ -->
+    <!--STATS SECTION-->
     <section class="py-16 border-y border-border bg-card/20 fade-in-section">
         <div class="container mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
@@ -139,10 +130,7 @@
         </div>
     </section>
 
-    <!-- ============================================
-         ABOUT SECTION
-         Why FitHub is different from other gyms
-         ============================================ -->
+    <!-- ABOUT SECTION-->
     <section class="section-padding fade-in-section">
         <div class="container mx-auto px-4 max-w-6xl">
             <div class="grid md:grid-cols-2 gap-16 items-center">
@@ -186,10 +174,7 @@
         </div>
     </section>
 
-    <!-- ============================================
-         GALLERY SECTION
-         Showcase of gym facilities
-         ============================================ -->
+    <!--GALLERY SECTION-->
     <section class="section-padding bg-card/10 fade-in-section">
         <div class="container mx-auto px-4">
             <!-- Section Header -->
@@ -224,10 +209,7 @@
         </div>
     </section>
 
-    <!-- ============================================
-         TESTIMONIALS SECTION
-         Real success stories from members
-         ============================================ -->
+    <!--TESTIMONIALS SECTION-->
     <section class="section-padding fade-in-section">
         <div class="container mx-auto px-4 max-w-7xl mb-2">
             <h2 class="text-4xl font-bold text-center mb-10">Success Stories</h2>
@@ -291,10 +273,7 @@
         </div>
     </section>
 
-    <!-- ============================================
-         FAQ SECTION
-         Frequently asked questions with accordion
-         ============================================ -->
+    <!--FAQ SECTION -->
     <section class="section-padding bg-card/30 fade-in-section">
         <div class="container mx-auto px-4 max-w-3xl">
             <h2 class="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
@@ -347,10 +326,7 @@
         </div>
     </section>
 
-    <!-- ============================================
-         NEWSLETTER SECTION
-         Email subscription form
-         ============================================ -->
+    <!--Email subscription form-->
     <section class="py-20 border-t border-border fade-in-section">
         <div class="container mx-auto px-4 text-center max-w-2xl">
             <h2 class="text-2xl font-bold mb-4">Join Our Newsletter</h2>
@@ -373,10 +349,7 @@
         </div>
     </section>
 
-    <!-- ============================================
-         FINAL CTA SECTION
-         Strong call-to-action with contrasting background
-         ============================================ -->
+    
     <section class="py-24 bg-destructive text-white text-center fade-in-section">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl font-bold mb-6">Ready to Transform?</h2>
@@ -389,17 +362,14 @@
         </div>
     </section>
 
-    <!-- ============================================
-         FOOTER
-         Site-wide footer with links and copyright
-         ============================================ -->
+    <!-- FOOTER -->
     <footer class="bg-card py-12 mt-0">
         <div class="container mx-auto px-4 max-w-7xl">
 
-            <!-- Footer Content Grid -->
+           
             <div class="grid md:grid-cols-4 gap-8 mb-8">
 
-                <!-- Column 1: Brand -->
+                <!--  Brand -->
                 <div>
                     <h3 class="text-xl font-bold mb-4">
                         FitHub<span class="text-destructive">.</span>
@@ -409,7 +379,7 @@
                     </p>
                 </div>
 
-                <!-- Column 2: Quick Links -->
+                <!--  Quick Links -->
                 <div>
                     <h4 class="font-semibold mb-4">Quick Links</h4>
                     <ul class="space-y-2 text-sm text-muted-foreground">
@@ -420,7 +390,7 @@
                     </ul>
                 </div>
 
-                <!-- Column 3: Programs -->
+                <!-- Programs -->
                 <div>
                     <h4 class="font-semibold mb-4">Programs</h4>
                     <ul class="space-y-2 text-sm text-muted-foreground">
@@ -431,7 +401,7 @@
                     </ul>
                 </div>
 
-                <!-- Column 4: Contact Info -->
+                <!--Contact Info -->
                 <div>
                     <h4 class="font-semibold mb-4">Contact</h4>
                     <ul class="space-y-2 text-sm text-muted-foreground">
@@ -465,14 +435,16 @@
                         &copy; 2025 FitHub. Web Development Semester 5 Project.
                     </p>
                 </div>
+                <br>
+                <div>
+                    <p>Gaurav Sharma | Sol Roll no :- 23-1-11-000274</p>
+                    <p>Md Zeeshan | Sol Roll no :- 23-1-11-000148</p>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- ============================================
-         JAVASCRIPT
-         Load custom scripts last for better performance
-         ============================================ -->
+    <!-- JAVASCRIPT-->
     <script src="./assets/js/script.js"></script>
 </body>
 </html>

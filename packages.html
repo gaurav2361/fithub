@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- ============================================
-         META TAGS - Essential page information
-         ============================================ -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="FitHub membership packages - Choose from Starter, Standard, Pro, or Elite plans. Flexible monthly, 6-month, and yearly options.">
@@ -11,36 +8,27 @@
     <meta name="author" content="FitHub">
     <title>Membership Packages - FitHub</title>
 
-    <!-- ============================================
-         EXTERNAL LIBRARIES & STYLESHEETS
-         ============================================ -->
-    <!-- jQuery - JavaScript library for DOM manipulation -->
+
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-    <!-- Tailwind CSS v4 - Utility-first CSS framework -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    <!-- Custom stylesheet with FitHub branding -->
     <link rel="stylesheet" href="./assets/css/style.css">
 
-    <!-- Google Fonts - Inter font family (multiple weights) -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- ============================================
-         NAVIGATION BAR
-         Sticky navigation that stays at top while scrolling
-         ============================================ -->
+
     <nav class="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur p-4">
         <div class="container mx-auto flex items-center justify-between max-w-7xl">
 
-            <!-- Logo/Brand -->
+            <!-- Logo -->
             <a href="index.html" class="text-2xl font-bold tracking-tighter">
                 FitHub<span class="text-destructive">.</span>
             </a>
 
-            <!-- Desktop Navigation Links (hidden on mobile) -->
+        
             <div class="hidden md:flex gap-8">
                 <a href="index.html" class="text-muted-foreground hover:text-foreground transition-colors">
                     Home
@@ -56,7 +44,7 @@
                 </a>
             </div>
 
-            <!-- Mobile Menu Button (hamburger icon) -->
+<!-- NAVIGATION -->
             <button id="menu-btn" class="md:hidden p-2 text-foreground cursor-pointer" aria-label="Toggle menu">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <line x1="4" x2="20" y1="12" y2="12"/>
@@ -66,7 +54,7 @@
             </button>
         </div>
 
-        <!-- Mobile Menu (slides down when hamburger is clicked) -->
+
         <div id="mobile-menu" class="hidden md:hidden border-t border-border bg-background p-4">
             <div class="flex flex-col space-y-4">
                 <a href="index.html" class="text-muted-foreground hover:text-foreground">Home</a>
@@ -77,10 +65,7 @@
         </div>
     </nav>
 
-    <!-- ============================================
-         PRICING HERO SECTION
-         Page title, description, and pricing toggle
-         ============================================ -->
+
     <section class="pt-32 pb-20 fade-in-section">
         <div class="container mx-auto px-4 max-w-7xl">
 
@@ -93,7 +78,7 @@
                     No hidden fees. No contracts. Cancel anytime. Choose the plan that fits your ambition.
                 </p>
 
-                <!-- Pricing Period Toggle Buttons -->
+                <!-- Pricing  Buttons -->
                 <div class="inline-flex rounded-lg border border-border bg-card p-1.5 shadow-sm">
                     <button
                         data-period="monthly"
@@ -119,10 +104,7 @@
                 </p>
             </div>
 
-            <!-- ============================================
-                 PRICING CARDS GRID
-                 Four membership tiers displayed side by side
-                 ============================================ -->
+            <!--PRICING CARDS GRID-->
             <div class="grid md:grid-cols-4 gap-6 items-start">
 
                 <!-- PLAN 1: STARTER -->
@@ -158,7 +140,7 @@
                         </li>
                     </ul>
 
-                    <!-- CTA Button -->
+
                     <a href="contact.html" class="btn btn-outline w-full rounded-full border-muted-foreground/20 hover:border-destructive hover:text-destructive">
                         Get Started
                     </a>
@@ -178,13 +160,13 @@
                         <p class="text-sm text-muted-foreground">For daily grinders.</p>
                     </div>
 
-                    <!-- Price Display (larger for emphasis) -->
+
                     <div class="flex items-baseline text-5xl font-extrabold mb-6">
                         <span class="price-amount">$49</span>
                         <span class="text-sm font-normal text-muted-foreground billing-text ml-1">/mo</span>
                     </div>
 
-                    <!-- Features List (bold text for standout features) -->
+
                     <ul class="space-y-4 text-sm text-foreground mb-8 flex-1">
                         <li class="flex items-center font-medium">
                             <span class="text-destructive mr-2">✓</span> 24/7 Gym Access
@@ -206,7 +188,7 @@
                         </li>
                     </ul>
 
-                    <!-- CTA Button (prominent red) -->
+
                     <a href="contact.html" class="btn btn-destructive w-full rounded-full font-bold shadow-lg hover:bg-red-700">
                         Join Now
                     </a>
@@ -287,7 +269,7 @@
                         </li>
                     </ul>
 
-                    <!-- CTA Button -->
+
                     <a href="contact.html" class="btn btn-outline w-full rounded-full border-muted-foreground/20 hover:border-destructive hover:text-destructive">
                         Get Started
                     </a>
@@ -295,10 +277,7 @@
 
             </div>
 
-            <!-- ============================================
-                 BRAND TRUST SECTION
-                 Show partner/sponsor logos
-                 ============================================ -->
+            <!--BRAND TRUST SECTION-->
             <div class="mt-20 text-center border-t border-border pt-12">
                 <p class="text-sm text-muted-foreground uppercase tracking-widest mb-6">
                     Trusted by athletes from
@@ -315,10 +294,7 @@
         </div>
     </section>
 
-    <!-- ============================================
-         TESTIMONIALS SECTION
-         Social proof from satisfied members
-         ============================================ -->
+    <!--TESTIMONIALS SECTION-->
     <section class="section-padding fade-in-section bg-card/10">
         <div class="container mx-auto px-4 max-w-7xl mb-2">
             <h2 class="text-4xl font-bold text-center mb-10">Success Stories</h2>
@@ -437,10 +413,7 @@
         </div>
     </section>
 
-    <!-- ============================================
-         FINAL CTA SECTION
-         Encourage users to take action
-         ============================================ -->
+   
     <section class="py-20 bg-destructive text-white text-center fade-in-section">
         <div class="container mx-auto px-4 max-w-3xl">
             <h2 class="text-4xl font-bold mb-6">Ready to Transform Your Life?</h2>
@@ -458,10 +431,7 @@
         </div>
     </section>
 
-    <!-- ============================================
-         FOOTER
-         Site-wide footer with links and copyright
-         ============================================ -->
+    <!--FOOTER-->
     <footer class="bg-card py-12 mt-0 border-t border-border">
         <div class="container mx-auto px-4 max-w-7xl">
 
@@ -534,29 +504,30 @@
                         &copy; 2025 FitHub. Web Development Semester 5 Project.
                     </p>
                 </div>
+                <br>
+                <div>
+                    <p>Gaurav Sharma | Sol Roll no :- 23-1-11-000274</p>
+                    <p>Md Zeeshan | Sol Roll no :- 23-1-11-000148</p>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- ============================================
-         JAVASCRIPT
-         Load custom scripts last for better performance
-         ============================================ -->
+
     <script src="./assets/js/script.js"></script>
 
-    <!-- Additional inline script for pricing toggle active state -->
+    
     <script>
-        // This script ensures pricing buttons maintain proper styling
-        // when clicked and updates prices dynamically
+
         $(document).ready(function() {
-            // Ensure pricing toggle buttons maintain proper styling
+           
             $('.pricing-toggle-btn').on('click', function() {
-                // Remove active styles from all buttons
+               
                 $('.pricing-toggle-btn')
                     .removeClass('bg-destructive text-white shadow-md')
                     .addClass('bg-transparent text-muted-foreground');
 
-                // Add active styles to clicked button
+               
                 $(this)
                     .removeClass('bg-transparent text-muted-foreground')
                     .addClass('bg-destructive text-white shadow-md');
