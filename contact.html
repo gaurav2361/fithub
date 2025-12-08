@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- ============================================
-         META TAGS - Essential page information
-         ============================================ -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Contact FitHub - Book a tour, inquire about pricing, or schedule your free trial. We're here to help you start your fitness journey.">
@@ -11,36 +9,23 @@
     <meta name="author" content="FitHub">
     <title>Contact Us - FitHub</title>
 
-    <!-- ============================================
-         EXTERNAL LIBRARIES & STYLESHEETS
-         ============================================ -->
-    <!-- jQuery - JavaScript library for DOM manipulation -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-    <!-- Tailwind CSS v4 - Utility-first CSS framework -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    <!-- Custom stylesheet with FitHub branding -->
     <link rel="stylesheet" href="./assets/css/style.css">
 
-    <!-- Google Fonts - Inter font family -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="min-h-screen flex flex-col bg-background text-foreground">
 
-    <!-- ============================================
-         NAVIGATION BAR
-         Sticky navigation that stays at top while scrolling
-         ============================================ -->
     <nav class="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur p-4">
         <div class="container mx-auto flex items-center justify-between max-w-7xl">
 
-            <!-- Logo/Brand -->
             <a href="index.html" class="text-2xl font-bold tracking-tighter">
                 FitHub<span class="text-destructive">.</span>
             </a>
 
-            <!-- Desktop Navigation Links (hidden on mobile) -->
             <div class="hidden md:flex gap-8">
                 <a href="index.html" class="text-muted-foreground hover:text-foreground transition-colors">
                     Home
@@ -56,7 +41,6 @@
                 </a>
             </div>
 
-            <!-- Mobile Menu Button (hamburger icon) -->
             <button id="menu-btn" class="md:hidden p-2 text-foreground cursor-pointer" aria-label="Toggle menu">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <line x1="4" x2="20" y1="12" y2="12"/>
@@ -66,7 +50,6 @@
             </button>
         </div>
 
-        <!-- Mobile Menu (slides down when hamburger is clicked) -->
         <div id="mobile-menu" class="hidden md:hidden border-t border-border bg-background p-4">
             <div class="flex flex-col space-y-4">
                 <a href="index.html" class="text-muted-foreground hover:text-foreground">Home</a>
@@ -77,23 +60,14 @@
         </div>
     </nav>
 
-    <!-- ============================================
-         MAIN CONTENT AREA
-         Split layout: Image on left, form on right
-         ============================================ -->
     <main class="flex-1 grid md:grid-cols-2">
 
-        <!-- ============================================
-             LEFT SIDE: Location & Contact Info
-             Hidden on mobile, visible on desktop
-             ============================================ -->
         <div class="relative hidden md:block h-full min-h-[600px]">
             <!-- Background Image -->
             <img src="https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?q=80&w=1469"
                  alt="FitHub gym interior - state-of-the-art fitness facility"
                  class="absolute inset-0 w-full h-full object-cover">
 
-            <!-- Dark overlay for text readability -->
             <div class="absolute inset-0 bg-black/60 flex items-center justify-center p-12">
                 <div class="text-white max-w-md">
 
@@ -154,10 +128,6 @@
             </div>
         </div>
 
-        <!-- ============================================
-             RIGHT SIDE: Contact Form
-             Main form for user inquiries
-             ============================================ -->
         <div class="flex items-center justify-center p-8 lg:p-16 bg-background">
             <div class="w-full max-w-md space-y-8">
 
@@ -169,13 +139,10 @@
                     </p>
                 </div>
 
-                <!-- ============================================
-                     CONTACT FORM
-                     Collects user information and message
-                     ============================================ -->
+
                 <form class="space-y-4" id="contact-form">
 
-                    <!-- Name Fields (side by side) -->
+                    <!-- Name Fields-->
                     <div class="grid grid-cols-2 gap-4">
                         <!-- First Name -->
                         <div class="space-y-2">
@@ -223,7 +190,6 @@
                             aria-required="true">
                     </div>
 
-                    <!-- Phone Field (Optional) -->
                     <div class="space-y-2">
                         <label for="phone" class="text-sm font-medium">
                             Phone Number
@@ -241,7 +207,6 @@
                         </p>
                     </div>
 
-                    <!-- Inquiry Type (Dropdown) -->
                     <div class="space-y-2">
                         <label for="inquiryType" class="text-sm font-medium">
                             I'm interested in <span class="text-destructive">*</span>
@@ -309,15 +274,10 @@
         </div>
     </main>
 
-    <!-- ============================================
-         MAP SECTION (Optional Enhancement)
-         Embedded Google Maps or location info
-         ============================================ -->
     <section class="py-16 bg-card/20 border-t border-border">
         <div class="container mx-auto px-4 max-w-6xl">
             <h2 class="text-3xl font-bold text-center mb-8">Find Us</h2>
 
-            <!-- Placeholder for map - Replace with actual Google Maps embed -->
             <div class="bg-muted rounded-xl overflow-hidden border border-border h-[400px] flex items-center justify-center">
                 <div class="text-center p-8">
                     <p class="text-muted-foreground mb-4">
@@ -364,17 +324,13 @@
         </div>
     </section>
 
-    <!-- ============================================
-         FOOTER
-         Site-wide footer with links and copyright
-         ============================================ -->
+    <!-- FOOTER -->
     <footer class="bg-card py-12 border-t border-border">
         <div class="container mx-auto px-4 max-w-7xl">
 
-            <!-- Footer Content Grid -->
+          
             <div class="grid md:grid-cols-4 gap-8 mb-8">
 
-                <!-- Column 1: Brand -->
                 <div>
                     <h3 class="text-xl font-bold mb-4">
                         FitHub<span class="text-destructive">.</span>
@@ -384,7 +340,7 @@
                     </p>
                 </div>
 
-                <!-- Column 2: Quick Links -->
+
                 <div>
                     <h4 class="font-semibold mb-4">Quick Links</h4>
                     <ul class="space-y-2 text-sm text-muted-foreground">
@@ -395,7 +351,7 @@
                     </ul>
                 </div>
 
-                <!-- Column 3: Programs -->
+
                 <div>
                     <h4 class="font-semibold mb-4">Programs</h4>
                     <ul class="space-y-2 text-sm text-muted-foreground">
@@ -406,7 +362,6 @@
                     </ul>
                 </div>
 
-                <!-- Column 4: Contact Info -->
                 <div>
                     <h4 class="font-semibold mb-4">Contact</h4>
                     <ul class="space-y-2 text-sm text-muted-foreground">
@@ -439,15 +394,18 @@
                     <p class="text-muted-foreground text-sm text-center">
                         &copy; 2025 FitHub. Web Development Semester 5 Project.
                     </p>
+                    <p class="text-muted-foreground text-sm text-center">
+                        &copy; Gaurav Sharma | Sol Roll no :-  23-1-11-000274 <br>
+                        MD ZEESHAN | Sol Roll no :-  23-1-11-000148
+
+                    </p>
+                  
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- ============================================
-         JAVASCRIPT
-         Load custom scripts last for better performance
-         ============================================ -->
+
     <script src="./assets/js/script.js"></script>
 
     <!-- Additional inline script for form validation feedback -->
